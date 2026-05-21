@@ -225,7 +225,7 @@ echoes-of-time/
 - ❤️ **Lives system** — stakes without combat
 - 🗺️ **Interactive map** — fast-travel between discovered zones
 - 🔊 **Era-authentic music** — Egyptian strings, Islamic oud/ney, Modern ambient
-- 👤 **Avatar choice** — male/female, child/adult
+- 👤 **Narrator choice** — male/female, child/adult
 
 ---
 

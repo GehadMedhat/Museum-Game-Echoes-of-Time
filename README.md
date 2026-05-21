@@ -185,7 +185,7 @@ The game opens with a main menu featuring four buttons:
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/echoes-of-time.git
+git clone https://github.com/GehadMedhat/echoes-of-time.git
 
 # Open in Unity Hub
 # File > Open Project > select the cloned folder

@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3d2b5e5b8bd75781820de5be38f0970, type: 3}
+  m_Name: ExhibitData_tv
+  m_EditorClassIdentifier: Assembly-CSharp::ExhibitData
+  exhibitName: TELEVISION
+  pages:
+  - "What if I told you that watching TV used to be considered\na crazy, impossible
+    dream?\n \nThe first TV was invented in 1926 by a young man named\nJohn Logie
+    Baird. The picture was blurry, black and white,\nand tiny but people were absolutely
+    amazed.\nMoving pictures... coming out of a box? Unbelievable!"
+  - "The first TV remote control was invented in 1950.\nIt was called \"Lazy Bones\"
+    because you no longer\nhad to get up to change the channel!\n \nToday there are
+    more TVs on Earth than there are people\nin the United States. From a blurry
+    black box to\ncrystal-clear giant screens television changed\nhow the whole world
+    shares stories. \U0001F4FA"
+  exhibitIllustration: {fileID: -3578749811347107042, guid: a907e89502ac2715c8a2644175f06a3c, type: 3}
+  narratorClip: {fileID: 8300000, guid: ad7544bcf2234aa4f98b0b5f38afaeac, type: 3}

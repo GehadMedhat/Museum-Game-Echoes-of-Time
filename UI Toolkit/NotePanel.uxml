@@ -1,0 +1,65 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+  <Style src="NotePanel.uss" />
+    <ui:VisualElement name="overlay" class="overlay">
+        <ui:VisualElement name="note-card" class="note-card">
+
+            <!-- ═══════════════════════════════════════════
+                 HIEROGLYPH SIDEBAR  — side_bar.png as bg image
+                 pieces.png sparkles sit at top and bottom
+                 ═══════════════════════════════════════════ -->
+            <ui:VisualElement name="hieroglyph-sidebar" class="hieroglyph-sidebar">
+                <ui:VisualElement name="sidebar-pieces-top" class="sidebar-pieces" />
+                <ui:Label name="hieroglyph-symbols" class="hieroglyph-symbols" text="◆" />
+                <ui:VisualElement name="sidebar-pieces-bot" class="sidebar-pieces sidebar-pieces--flip" />
+            </ui:VisualElement>
+
+            <!-- Inner decorative frame -->
+            <ui:VisualElement class="inner-frame" />
+
+            <!-- Already-read stamp -->
+            <ui:Label name="read-stamp" class="read-stamp" text="STUDIED" />
+
+            <!-- Title -->
+            <ui:Label name="statue-name" class="statue-name" text="HORUS" />
+
+            <!-- DIVIDER — divider_bar.png -->
+            <ui:VisualElement name="divider-img" class="divider-img" />
+
+            <!-- BODY: illustration left | text right -->
+            <ui:VisualElement class="body-row">
+
+                <ui:VisualElement class="left-col">
+                    <ui:VisualElement name="illustration" class="illustration" />
+                    <ui:Label name="category-badge" class="category-badge" text="GENERAL" />
+                </ui:VisualElement>
+
+                <ui:VisualElement class="right-col">
+                    <ui:Label name="note-text" class="note-text" text="Hello!" />
+                </ui:VisualElement>
+
+            </ui:VisualElement>
+
+            <!-- Spacer -->
+            <ui:VisualElement class="spacer" />
+
+            <!-- BOTTOM ORNAMENT — bottom.png -->
+            <ui:VisualElement name="bottom-img" class="bottom-img" />
+
+            <!-- Nav row -->
+            <ui:VisualElement class="nav-row">
+                <ui:Button name="prev-btn" class="nav-btn" text="◀  BACK" />
+                <ui:VisualElement class="page-indicator-row">
+                    <ui:Label name="page-indicator" class="page-indicator" text="" />
+                </ui:VisualElement>
+                <ui:Button name="next-btn" class="nav-btn" text="NEXT  ▶" />
+            </ui:VisualElement>
+
+            <!-- Close button — last in DOM so it renders on top of everything -->
+            <ui:Button name="close-btn" class="close-btn" text="✕" />
+
+            <!-- Narrator button — last in DOM so it renders on top of everything -->
+            <ui:Button name="narrator-btn" class="narrator-btn" text="♪" />
+
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

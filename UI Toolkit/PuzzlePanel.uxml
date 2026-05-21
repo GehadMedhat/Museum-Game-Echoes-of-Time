@@ -1,0 +1,73 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+  <Style src="PuzzlePanel.uss" />
+    <ui:VisualElement name="puzzle-overlay" class="puzzle-overlay">
+        <ui:VisualElement name="puzzle-card" class="puzzle-card">
+
+            <!-- Header -->
+            <ui:VisualElement class="puz-header">
+                <ui:Label name="puzzle-title" class="puzzle-title" text="✦  EAGLE  ✦" />
+                <ui:VisualElement name="hearts-row" class="hearts-row" />
+                <ui:Button name="puzzle-close" class="puz-close-btn" text="✕" />
+            </ui:VisualElement>
+
+            <ui:VisualElement class="divider" />
+
+            <!-- Progress bar -->
+            <ui:Label name="progress-label" class="progress-label" text="0 / 5 pieces placed" />
+            <ui:VisualElement class="progress-bar-bg">
+                <ui:VisualElement name="progress-fill" class="progress-bar-fill" />
+            </ui:VisualElement>
+
+            <ui:Label class="instruction"
+                      text="Drag each piece to its correct spot on the shape!" />
+
+            <!-- Main area -->
+            <ui:VisualElement class="main-area">
+
+                <ui:VisualElement class="bank-wrap">
+                    <ui:Label class="bank-title" text="PIECES" />
+                    <ui:VisualElement name="piece-bank" class="piece-bank" />
+                </ui:VisualElement>
+
+                <ui:Label class="mid-arrow" text="→" />
+
+                <ui:VisualElement class="canvas-wrap">
+                    <ui:Label class="bank-title" text="ARRANGE HERE" />
+                    <ui:VisualElement name="ghost-canvas" class="ghost-canvas" />
+                </ui:VisualElement>
+
+            </ui:VisualElement>
+
+            <ui:Label name="puzzle-feedback" class="puzzle-feedback" text="" />
+
+            <ui:VisualElement class="puz-bottom">
+                <ui:Button name="check-btn" class="check-btn" text="✓  CHECK" />
+            </ui:VisualElement>
+
+            <!-- Hall complete overlay -->
+            <ui:VisualElement name="hall-complete-panel" class="hall-complete">
+                <ui:Label class="complete-emoji" text="🏛" />
+                <ui:Label class="complete-title" text="Hall Complete!" />
+                <ui:Label class="complete-sub"
+                          text="You restored all three artifacts! Amazing explorer!" />
+                <ui:Button name="next-hall-btn" class="next-hall-btn"
+                           text="Continue to Hall 2  →" />
+            </ui:VisualElement>
+
+        </ui:VisualElement>
+    </ui:VisualElement>
+
+    <!-- ── BACK TO MAP HINT ───────────────────────────────────
+         Shown at bottom of screen after player closes the panel
+         without using "Continue to Hall 2 →".
+         Hidden by default; PuzzleUI.cs shows/hides it in DoClose().
+    ──────────────────────────────────────────────────────── -->
+    <ui:VisualElement name="back-to-map-hint" class="back-to-map-hint">
+        <ui:Label class="back-to-map-arrow" text="↓" />
+        <ui:Button name="back-to-map-btn" class="back-to-map-btn"
+                   text="← Back to Map" />
+        <ui:Label class="back-to-map-sub"
+                  text="Enter the next era from the level map" />
+    </ui:VisualElement>
+
+</ui:UXML>

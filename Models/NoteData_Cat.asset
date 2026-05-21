@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d75aa29b3caf8c61972b8e9be9acae5, type: 3}
+  m_Name: NoteData_Cat
+  m_EditorClassIdentifier: Assembly-CSharp::NoteData
+  statueName: Bastet
+  pages:
+  - 'Cats were VERY special in ancient Egypt!
+
+    This is Bastet, the goddess of
+    cats,
+
+    home, and happiness.
+
+
+    Egyptians loved their cats so much
+
+    that
+    hurting one was against the law!
+
+'
+  - "Cats protected Egyptian homes\nfrom mice and snakes.\nSo they were treated like
+    royalty!\n\nIf a cat died, the whole family\nwould be very sad and mourn together.\n\nDo
+    you have a cat at home?  \U0001F431"
+  statueIllustration: {fileID: 1075993247170539406, guid: 198657ea7a6a73490a465b9f4a6f4538, type: 3}
+  narratorClip: {fileID: 8300000, guid: 53809584af20a9739b7ea1393dde4d73, type: 3}

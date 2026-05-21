@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+  <Style src="InteractHintUI.uss" />
+  <ui:VisualElement name="hint-root" class="hint-root" picking-mode="Ignore">
+    <ui:VisualElement class="hint-pill" picking-mode="Ignore">
+      <ui:Label name="hint-label" class="hint-label"
+                text="Press  [E]  to interact" picking-mode="Ignore" />
+    </ui:VisualElement>
+  </ui:VisualElement>
+</ui:UXML>

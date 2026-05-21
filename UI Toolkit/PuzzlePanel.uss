@@ -1,0 +1,452 @@
+/* PuzzlePanel.uss — EchoesOfTime — Improved Egyptian children's UI */
+
+.puzzle-overlay {
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    background-color: rgba(10, 5, 0, 0.80);
+    align-items: center;
+    justify-content: center;
+}
+
+/* ── CARD ── */
+.puzzle-card {
+    width: 860px;
+    background-color: rgb(245, 225, 175);
+    border-radius: 18px;
+    border-width: 4px;
+    border-color: rgb(180, 120, 45);
+    padding: 22px 32px 24px;
+    flex-direction: column;
+    position: relative;
+}
+
+/* ── HEADER ── */
+.puz-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 4px;
+}
+
+.puzzle-title {
+    font-size: 26px;
+    -unity-font-style: bold;
+    color: rgb(70, 35, 5);
+    letter-spacing: 5px;
+    flex-grow: 1;
+    -unity-text-align: middle-left;
+}
+
+/* ── HEARTS ── */
+.hearts-row {
+    flex-direction: row;
+    gap: 10px;
+    margin-right: 14px;
+    align-items: center;
+}
+
+.heart-full {
+    width: 32px;
+    height: 32px;
+    color: rgb(210, 50, 50);
+    font-size: 28px;
+    -unity-text-align: middle-center;
+    -unity-font-style: bold;
+}
+
+.heart-empty {
+    width: 32px;
+    height: 32px;
+    color: rgba(210, 50, 50, 0.28);
+    font-size: 28px;
+    -unity-text-align: middle-center;
+    -unity-font-style: bold;
+}
+
+.puz-close-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 17px;
+    background-color: rgba(130, 70, 20, 0.25);
+    border-width: 0;
+    color: rgb(80, 40, 10);
+    font-size: 17px;
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    padding: 0;
+}
+
+/* ── PROGRESS ── */
+.progress-label {
+    font-size: 14px;
+    color: rgb(120, 70, 20);
+    -unity-text-align: middle-center;
+    margin-bottom: 4px;
+    letter-spacing: 1px;
+}
+
+.progress-bar-bg {
+    height: 8px;
+    background-color: rgba(140, 90, 30, 0.2);
+    border-radius: 4px;
+    margin-bottom: 12px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 8px;
+    background-color: rgb(180, 130, 40);
+    border-radius: 4px;
+    width: 0%;
+    transition-duration: 0.3s;
+    transition-property: width;
+}
+
+.divider {
+    height: 2px;
+    background-color: rgb(180, 120, 45);
+    margin-bottom: 14px;
+}
+
+.instruction {
+    font-size: 16px;
+    color: rgb(80, 45, 10);
+    -unity-text-align: middle-center;
+    margin-bottom: 14px;
+}
+
+/* ── MAIN AREA ── */
+.main-area {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 14px;
+}
+
+.bank-wrap {
+    flex-direction: column;
+    align-items: center;
+    width: 180px;
+}
+
+.bank-title {
+    font-size: 13px;
+    color: rgb(120, 70, 20);
+    letter-spacing: 1px;
+    -unity-text-align: middle-center;
+    margin-bottom: 10px;
+    -unity-font-style: bold;
+}
+
+.piece-bank {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    min-height: 400px;
+}
+
+.mid-arrow {
+    font-size: 30px;
+    color: rgb(180, 120, 45);
+    align-self: center;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.canvas-wrap {
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+}
+
+/* ── GHOST CANVAS ── warm parchment bg ── */
+.ghost-canvas {
+    width: 550px;
+    height: 550px;
+    background-color: rgb(225, 195, 135);
+    border-radius: 14px;
+    border-width: 3px;
+    border-color: rgb(180, 120, 45);
+    position: relative;
+    overflow: hidden;
+    -unity-background-scale-mode: scale-to-fit;
+    background-color: rgb(210, 185, 130);
+    flex-shrink: 0;
+}
+
+/* ── SNAP ZONES ── */
+.snap-zone {
+    /* Size set dynamically by PuzzleUI per piece */
+    background-color: rgba(255, 230, 140, 0.20);
+    border-radius: 10px;
+    border-width: 2px;
+    border-color: rgba(210, 160, 60, 0.55);
+    align-items: center;
+    justify-content: center;
+    min-width: 30px;
+    min-height: 20px;
+}
+
+.snap-zone.zone-filled {
+    background-color: rgba(100, 200, 120, 0.22);
+    border-color: rgb(80, 160, 80);
+    border-width: 3px;
+}
+
+/* ── PIECES ── bigger, image-first ── */
+.puzzle-piece {
+    width: 160px;
+    height: 100px;
+    background-color: rgb(210, 170, 100);
+    border-radius: 10px;
+    border-width: 0;
+    
+    align-items: center;
+    justify-content: flex-end;
+    cursor: move;
+    -unity-background-scale-mode: scale-to-fit;
+    background-color: rgb(210, 185, 130);
+    flex-shrink: 0;
+    overflow: hidden;
+    transition-duration: 0.15s;
+    transition-property: border-color, scale;
+}
+
+.puzzle-piece:hover {
+    border-color: rgb(230, 170, 40);
+    scale: 1.04;
+}
+
+.puzzle-piece.piece-drag {
+    border-color: rgb(255, 210, 60);
+    border-width: 3px;
+    scale: 1.06;
+    opacity: 0.88;
+}
+
+.puzzle-piece.piece-correct {
+    border-color: rgb(60, 180, 80);
+    border-width: 3px;
+    background-color: rgba(60, 180, 80, 0.12);
+}
+
+.puzzle-piece.piece-wrong-pos {
+    border-color: rgb(210, 70, 70);
+    border-width: 2px;
+}
+
+
+
+/* ── FEEDBACK ── */
+.puzzle-feedback {
+    font-size: 16px;
+    -unity-text-align: middle-center;
+    margin-top: 12px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    white-space: normal;
+}
+
+.fb-good {
+    background-color: rgba(50, 170, 80, 0.22);
+    color: rgb(20, 100, 40);
+}
+
+.fb-bad {
+    background-color: rgba(210, 55, 55, 0.22);
+    color: rgb(140, 20, 20);
+}
+
+/* ── BOTTOM ── */
+.puz-bottom {
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 16px;
+}
+
+.check-btn {
+    background-color: rgb(170, 105, 35);
+    border-radius: 12px;
+    border-width: 0;
+    color: rgb(255, 245, 215);
+    font-size: 18px;
+    -unity-font-style: bold;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    letter-spacing: 3px;
+    transition-duration: 0.15s;
+    transition-property: background-color;
+}
+
+.check-btn:hover {
+    background-color: rgb(200, 130, 50);
+}
+
+/* ── HALL COMPLETE ── */
+.hall-complete {
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    background-color: rgb(245, 225, 175);
+    border-radius: 14px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 40px;
+}
+
+.complete-emoji {
+    font-size: 56px;
+    -unity-text-align: middle-center;
+}
+
+.complete-title {
+    font-size: 32px;
+    -unity-font-style: bold;
+    color: rgb(70, 35, 5);
+    letter-spacing: 3px;
+    -unity-text-align: middle-center;
+}
+
+.complete-sub {
+    font-size: 19px;
+    color: rgb(100, 60, 15);
+    -unity-text-align: middle-center;
+    white-space: normal;
+}
+
+.next-hall-btn {
+    background-color: rgb(170, 105, 35);
+    border-radius: 12px;
+    border-width: 0;
+    color: rgb(255, 245, 215);
+    font-size: 19px;
+    -unity-font-style: bold;
+    padding-left: 36px;
+    padding-right: 36px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    margin-top: 14px;
+}
+
+/* ── CANVAS PIECES (floating + locked) ── */
+.canvas-piece {
+    position: absolute;
+    -unity-background-scale-mode: scale-to-fit;
+    background-color: transparent;
+    border-radius: 6px;
+    border-width: 0;
+    
+    cursor: move;
+}
+
+.piece-floating {
+    position: absolute;
+    -unity-background-scale-mode: scale-to-fit;
+    background-color: transparent;
+    border-radius: 6px;
+    border-width: 0;
+    
+    opacity: 0.9;
+}
+
+.piece-locked {
+    position: absolute;
+    -unity-background-scale-mode: scale-to-fit;
+    background-color: transparent;
+    border-radius: 6px;
+    border-width: 0;
+    
+}
+
+.piece-snap-flash {
+    
+    border-width: 0;
+    
+}
+
+/* ── BANK PIECES ── */
+.puzzle-piece {
+    width: 160px;
+    height: 100px;
+    background-color: rgb(210, 170, 100);
+    border-radius: 10px;
+    border-width: 0;
+    
+    align-items: flex-end;
+    justify-content: flex-end;
+    cursor: move;
+    -unity-background-scale-mode: scale-to-fit;
+    background-color: rgb(210, 185, 130);
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.puzzle-piece:hover {
+    border-color: rgb(230, 170, 40);
+    scale: 1.04;
+}
+
+/* ── SNAP ZONE (invisible — no squares!) ── */
+.snap-zone {
+    display: none;
+}
+
+/* ── PIECE LABELS — hidden ── */
+.piece-lbl {
+    display: none;
+}
+
+/* ── BACK TO MAP HINT ──────────────────────────────────────
+   Shown at bottom of screen after player exits the puzzle panel.
+   Position: fixed to bottom-center, above the floor.
+────────────────────────────────────────────────────────── */
+.back-to-map-hint {
+    position: absolute;
+    bottom: 28px;
+    left: 0;
+    right: 0;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+.back-to-map-arrow {
+    font-size: 22px;
+    color: rgb(220, 180, 80);
+    -unity-font-style: bold;
+    margin-bottom: 4px;
+    /* gentle bob animation via USS transition on translate */
+    transition-property: translate;
+    transition-duration: 0.6s;
+}
+
+.back-to-map-btn {
+    background-color: rgba(20, 10, 0, 0.82);
+    border-color: rgb(200, 155, 55);
+    border-width: 2px;
+    border-radius: 30px;
+    color: rgb(240, 205, 100);
+    font-size: 17px;
+    -unity-font-style: bold;
+    padding: 10px 28px;
+    letter-spacing: 1px;
+    cursor: hand;
+    margin-bottom: 6px;
+    transition-duration: 0.15s;
+    transition-property: background-color, scale;
+}
+
+.back-to-map-btn:hover {
+    background-color: rgba(180, 130, 40, 0.90);
+    color: rgb(255, 240, 180);
+    scale: 1.04 1.04;
+}
+
+.back-to-map-sub {
+    font-size: 12px;
+    color: rgba(220, 200, 150, 0.70);
+    -unity-font-style: italic;
+}

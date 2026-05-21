@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3d2b5e5b8bd75781820de5be38f0970, type: 3}
+  m_Name: ExhibitData_computer
+  m_EditorClassIdentifier: Assembly-CSharp::ExhibitData
+  exhibitName: THE COMPUTER
+  pages:
+  - "The first computers were SO big they filled an entire room!\nThey weighed as
+    much as 10 elephants and could only\ndo simple math. There were no screens, no
+    mouse,\nand definitely no games just thousands of wires\nand blinking lights.\n
+    \nThe people who operated them were mostly women,\nknown as \"human computers\"
+    because their job\nwas to calculate numbers by hand before the machines took
+    over."
+  - "The first computer mouse was made of wood!\nIt was invented in 1964 and had
+    just one button.\n \nToday, the phone in your pocket is MILLIONS of times\nmore
+    powerful than those giant room-sized machines.\nFrom a metal box as big as a
+    house to something\nthat fits in your hand that's the magic of invention! \U0001F4BB"
+  exhibitIllustration: {fileID: 1152356169552002576, guid: 69f06ed49f9286d029c418756af7526f, type: 3}
+  narratorClip: {fileID: 8300000, guid: f18f05dfc5384a062ad29dbae3446302, type: 3}

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c969ebc724764794db622b58770ba051, type: 3}
+  m_Name: Data_Book
+  m_EditorClassIdentifier: Assembly-CSharp::ArtifactData
+  artifactName: The House of Wisdom
+  era: "Islamic Golden Age \xB7 9th Century CE"
+  description: "Muslim scholars built the House of Wisdom in Baghdad \u2014 the greatest
+    library in the world. Scholars from all religions worked together translating
+    books and making new discoveries in science, medicine and mathematics."
+  funFact: The House of Wisdom had over 400,000 books when most European libraries
+    had fewer than 100!
+  narrationSound: {fileID: 8300000, guid: 369b84a6808cacd40a67ba48e3ee7ce7, type: 3}

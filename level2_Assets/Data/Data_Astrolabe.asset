@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c969ebc724764794db622b58770ba051, type: 3}
+  m_Name: Data_Astrolabe
+  m_EditorClassIdentifier: Assembly-CSharp::ArtifactData
+  artifactName: The Astrolabe
+  era: "Golden Age of Islam \xB7 800 CE"
+  description: Muslim astronomers perfected the astrolabe to measure star angles,
+    determine prayer times, and find the direction of Mecca from anywhere on Earth.
+  funFact: European sailors called it the Muslim clock!
+  narrationSound: {fileID: 8300000, guid: 5543190dfcb4a3346828951f8c1e1d6f, type: 3}

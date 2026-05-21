@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d75aa29b3caf8c61972b8e9be9acae5, type: 3}
+  m_Name: NoteData_RosettaStone
+  m_EditorClassIdentifier: Assembly-CSharp::NoteData
+  statueName: The Rosetta Stone
+  pages:
+  - 'This is the Rosetta Stone!
+
+    It is one of the most important
+
+    objects
+    ever found.
+
+
+    It has the SAME message written
+
+    in THREE different languages,
+
+    one
+    of them is ancient hieroglyphics!'
+  - "For a long time, nobody could read\nthe mysterious picture-writing of Egypt.\n\nBut
+    when they found this stone\nin a town called Rashid (Rosetta),\nthey finally
+    cracked the code!\n\nNow we can read what the ancient\nEgyptians wrote thousands
+    of years ago.\nIsn't that amazing?  \U0001F511"
+  statueIllustration: {fileID: 5725184139431673129, guid: b9d81a46bf62099afa6d09d3de6b59ab, type: 3}
+  narratorClip: {fileID: 8300000, guid: ef362f5fe27f24d888ffa80afc875c41, type: 3}

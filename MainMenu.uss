@@ -1,0 +1,873 @@
+/*
+  Echoes of Time — MainMenu.uss
+  Unity USS (UI Toolkit) — Unity 6 compatible
+  All CSS-invalid properties removed:
+    • border-style: solid  → removed (USS borders are always solid)
+    • font-weight: bold    → replaced with -unity-font-style: bold
+*/
+
+/* ─── ROOT ─────────────────────────────── */
+.root-container {
+    width: 100%;
+    height: 100%;
+    background-color: #0A0806;
+    overflow: hidden;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+/* ─── BACKGROUND ────────────────────────── */
+.bg-layer {
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    background-color: #12100C;
+}
+
+.orb { display: none; }
+.orb-1 { display: none; }
+.orb-2 { display: none; }
+.orb-3 { display: none; }
+
+/* ─── BORDER FRAME ──────────────────────── */
+.border-frame {
+    position: absolute;
+    left: 16px; top: 16px; right: 16px; bottom: 16px;
+    border-width: 1px;
+    border-color: rgba(201,162,39,0.2);
+}
+
+.corner {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-color: #C9A227;
+}
+.corner-tl {
+    left: -1px; top: -1px;
+    border-width: 2px 0 0 2px;
+}
+.corner-br {
+    right: -1px; bottom: -1px;
+    border-width: 0 2px 2px 0;
+}
+
+/* ─── PARTICLE ANCHOR ───────────────────── */
+.particle-anchor {
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+}
+
+/* ─── SCREENS ───────────────────────────── */
+.screen {
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    opacity: 0;
+    display: none;
+}
+.screen--active {
+    opacity: 1;
+    display: flex;
+}
+.screen--hidden {
+    opacity: 0;
+    display: none;
+}
+
+/* ═══════════════════════════
+   SCREEN 1 — HOME
+═══════════════════════════ */
+.screen-home {
+    padding: 40px;
+}
+
+.home-top {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.ornament {
+    -unity-font-definition: url('project://database/Assets/Resources/Fonts/Cinzel-Regular.ttf');
+    color: #C9A227;
+    font-size: 22px;
+    letter-spacing: 12px;
+    opacity: 0.6;
+    margin-bottom: 8px;
+}
+
+.title-main {
+    -unity-font-definition: url('project://database/Assets/Resources/Fonts/CinzelDecorative-Bold.ttf');
+    font-size: 64px;
+    color: #F0D060;
+    letter-spacing: 4px;
+    -unity-text-align: upper-center;
+    white-space: normal;
+    margin-bottom: 6px;
+}
+
+.title-sub {
+    -unity-font-definition: url('project://database/Assets/Resources/Fonts/Cinzel-Regular.ttf');
+    font-size: 15px;
+    color: #A89060;
+    letter-spacing: 8px;
+    -unity-text-align: upper-center;
+    margin-top: 4px;
+}
+
+/* ── GOLD DIVIDER ── */
+.divider-gold-wrap {
+    flex-direction: row;
+    align-items: center;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    width: 200px;
+}
+.divider-line {
+    flex: 1;
+    height: 1px;
+    background-color: #C9A227;
+    opacity: 0.5;
+}
+.divider-diamond {
+    color: #C9A227;
+    font-size: 10px;
+    margin-left: 8px;
+    margin-right: 8px;
+    background-color: #12100C;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+/* ── TAGLINE ── */
+.tagline {
+    -unity-font-definition: url('project://database/Assets/Resources/Fonts/CrimsonText-Italic.ttf');
+    font-size: 18px;
+    color: #EAD9B0;
+    -unity-text-align: upper-center;
+    white-space: normal;
+    max-width: 520px;
+    margin-top: 8px;
+    -unity-font-style: italic;
+}
+
+/* ── INFO BUTTONS ── */
+.info-buttons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 28px;
+    margin-bottom: 20px;
+}
+
+.btn-info {
+    background-color: rgba(0,0,0,0);
+    border-width: 1px;
+    border-color: rgba(201,162,39,0.4);
+    color: #C9A227;
+    font-size: 12px;
+    letter-spacing: 2px;
+    padding: 10px 24px;
+    margin: 6px;
+    -unity-text-align: middle-center;
+    cursor: arrow;
+    transition-property: background-color, border-color, color;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+}
+.btn-info:hover {
+    background-color: #C9A227;
+    border-color: #C9A227;
+    color: #0A0806;
+}
+.btn-info:active {
+    background-color: #8B6914;
+    color: #0A0806;
+}
+
+/* ── DIVE IN ── */
+.divein-wrap {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 8px;
+}
+.divein-label {
+    -unity-font-definition: url('project://database/Assets/Resources/Fonts/Cinzel-Regular.ttf');
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: #A89060;
+    -unity-text-align: upper-center;
+    margin-bottom: 12px;
+}
+.btn-divein {
+    -unity-font-definition: url('project://database/Assets/Resources/Fonts/CinzelDecorative-Bold.ttf');
+    background-color: #B89020;
+    border-width: 0;
+    color: #0A0806;
+    -unity-font-style: bold;
+    font-size: 18px;
+    padding: 16px 48px;
+    letter-spacing: 2px;
+    -unity-text-align: middle-center;
+    cursor: arrow;
+    transition-property: background-color, translate;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+}
+.btn-divein:hover {
+    background-color: #F0D060;
+    translate: 0 -2px;
+}
+.btn-divein:active {
+    background-color: #C9A227;
+    translate: 0 0;
+}
+
+/* ═══════════════════════════
+   SCREEN 2 — INFO
+═══════════════════════════ */
+.screen-info {
+    padding: 60px 80px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+.info-header {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 860px;
+}
+.info-category {
+    -unity-font-definition: url('project://database/Assets/Resources/Fonts/Cinzel-Regular.ttf');
+    font-size: 11px;
+    letter-spacing: 5px;
+    color: #8B6914;
+    -unity-text-align: upper-center;
+    margin-bottom: 8px;
+}
+.info-title {
+    -unity-font-definition: url('project://database/Assets/Resources/Fonts/CinzelDecorative-Bold.ttf');
+    font-size: 42px;
+    color: #F0D060;
+    -unity-text-align: upper-center;
+    white-space: normal;
+}
+.info-body {
+    background-color: rgba(42,35,24,0.6);
+    border-width: 1px;
+    border-color: rgba(201,162,39,0.2);
+    border-left-width: 3px;
+    border-left-color: #C9A227;
+    padding: 36px 48px;
+    width: 100%;
+    max-width: 860px;
+    max-height: 70%;
+    margin-bottom: 24px;
+}
+.info-body > .unity-scroll-view__content-and-vertical-scroll-container > .unity-scroller--vertical {
+    width: 4px;
+}
+.info-body > .unity-scroll-view__content-and-vertical-scroll-container > .unity-scroller--vertical > .unity-base-slider__dragger {
+    background-color: #8B6914;
+    border-radius: 2px;
+}
+.info-body > .unity-scroll-view__content-and-vertical-scroll-container > .unity-scroller--vertical > .unity-base-slider__tracker {
+    background-color: #2A2318;
+}
+.info-body-text {
+    -unity-font-definition: url('project://database/Assets/Resources/Fonts/CrimsonText-Regular.ttf');
+    font-size: 20px;
+    color: #F5EDD6;
+    white-space: normal;
+    -unity-paragraph-spacing: 16px;
+}
+.btn-back {
+    -unity-font-definition: url('project://database/Assets/Resources/Fonts/Cinzel-Regular.ttf');
+    background-color: rgba(0,0,0,0);
+    border-width: 1px;
+    border-color: rgba(201,162,39,0.3);
+    color: #A89060;
+    font-size: 11px;
+    letter-spacing: 3px;
+    padding: 12px 40px;
+    align-self: center;
+    width: 100%;
+    max-width: 860px;
+    -unity-text-align: middle-center;
+    cursor: arrow;
+    transition-property: border-color, color;
+    transition-duration: 0.3s;
+}
+.btn-back:hover {
+    border-color: #C9A227;
+    color: #C9A227;
+}
+
+/* ═══════════════════════════
+   SCREEN 3 — LEVELS
+═══════════════════════════ */
+.screen-levels {
+    padding: 32px 40px;
+}
+.levels-header {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.levels-eyebrow {
+    -unity-font-definition: url('project://database/Assets/Resources/Fonts/Cinzel-Regular.ttf');
+    font-size: 11px;
+    letter-spacing: 6px;
+    color: #A89060;
+    -unity-text-align: upper-center;
+    margin-bottom: 8px;
+}
+.levels-title {
+    -unity-font-definition: url('project://database/Assets/Resources/Fonts/CinzelDecorative-Bold.ttf');
+    font-size: 32px;
+    color: #F0D060;
+    -unity-text-align: upper-center;
+}
+
+/* ── CARDS ROW ── */
+.levels-row {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    margin-bottom: 20px;
+}
+
+/* ── LEVEL CARD ── */
+.level-card {
+    width: 260px;
+    background-color: #2A2318;
+    border-width: 1px;
+    border-color: rgba(201,162,39,0.15);
+    flex-direction: column;
+    overflow: hidden;
+    margin: 8px;
+    cursor: arrow;
+    transition-property: translate, border-color;
+    transition-duration: 0.35s;
+    transition-timing-function: ease;
+}
+.level-card--locked {
+    opacity: 0.5;
+    cursor: arrow;
+}
+.level-card--unlocked:hover {
+    translate: 0 -8px;
+    border-color: #C9A227;
+}
+
+/* Card glow */
+.card-glow {
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    opacity: 0;
+    background-color: rgba(201,162,39,0.08);
+    transition-property: opacity;
+    transition-duration: 0.4s;
+}
+.level-card--unlocked:hover > .card-glow {
+    opacity: 1;
+}
+
+/* ── CARD IMAGE ── */
+.card-image {
+    width: 100%;
+    height: 130px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.card-image--ancient  { background-color: #2E1F00; }
+.card-image--medieval { background-color: #150F1A; }
+.card-image--modern   { background-color: #0F1820; }
+
+.era-illustration {
+    font-size: 64px;
+    -unity-text-align: middle-center;
+}
+.card-badge {
+    -unity-font-definition: url('project://database/Assets/Resources/Fonts/Cinzel-Regular.ttf');
+    position: absolute;
+    right: 10px; top: 10px;
+    background-color: rgba(0,0,0,0.7);
+    border-width: 1px;
+    border-color: rgba(201,162,39,0.4);
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #C9A227;
+    padding: 4px 10px;
+}
+.lock-overlay {
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    align-items: center;
+    justify-content: center;
+}
+.lock-icon {
+    font-size: 32px;
+    -unity-text-align: middle-center;
+}
+
+/* ── CARD INFO ── */
+.card-info {
+    flex-direction: column;
+    padding: 16px 18px 20px;
+    flex: 1;
+}
+.card-level-num {
+    -unity-font-definition: url('project://database/Assets/Resources/Fonts/Cinzel-Regular.ttf');
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #8B6914;
+    margin-bottom: 4px;
+}
+.card-era-name {
+    -unity-font-definition: url('project://database/Assets/Resources/Fonts/CinzelDecorative-Bold.ttf');
+    font-size: 20px;
+    color: #F0D060;
+    white-space: normal;
+    margin-bottom: 4px;
+}
+.card-era-name--locked { color: #A89060; }
+.card-desc {
+    -unity-font-definition: url('project://database/Assets/Resources/Fonts/CrimsonText-Regular.ttf');
+    font-size: 13px;
+    color: #A89060;
+    white-space: normal;
+    flex: 1;
+    margin-top: 4px;
+    margin-bottom: 8px;
+}
+
+/* ── ARTIFACT TAGS ── */
+.card-artifacts {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 8px;
+    margin-bottom: 4px;
+}
+.artifact-tag {
+    -unity-font-definition: url('project://database/Assets/Resources/Fonts/Cinzel-Regular.ttf');
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: #8B6914;
+    border-width: 1px;
+    border-color: rgba(201,162,39,0.2);
+    padding: 2px 8px;
+    margin: 2px;
+}
+
+/* ── CARD CTA ── */
+.card-cta {
+    -unity-font-definition: url('project://database/Assets/Resources/Fonts/Cinzel-Regular.ttf');
+    background-color: #8B6914;
+    border-width: 0;
+    color: #0A0806;
+    -unity-font-style: bold;
+    font-size: 10px;
+    letter-spacing: 3px;
+    padding: 8px 0;
+    -unity-text-align: middle-center;
+    margin-top: 12px;
+    cursor: arrow;
+    transition-property: background-color;
+    transition-duration: 0.3s;
+}
+.card-cta:hover { background-color: #C9A227; }
+.card-cta--locked {
+    background-color: rgba(80,60,40,0.3);
+    color: #A89060;
+    cursor: arrow;
+}
+
+/* ── PROGRESS BAR ── */
+.progress-wrap {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 12px;
+    align-self: center;
+}
+.progress-label-row {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+.progress-label {
+    -unity-font-definition: url('project://database/Assets/Resources/Fonts/Cinzel-Regular.ttf');
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #A89060;
+}
+.progress-bar-track {
+    width: 100%;
+    height: 4px;
+    background-color: rgba(201,162,39,0.1);
+}
+.progress-fill {
+    height: 100%;
+    background-color: #C9A227;
+    transition-property: width;
+    transition-duration: 0.6s;
+    transition-timing-function: ease;
+}
+
+/* ── GHOST BACK BUTTON ── */
+.btn-back-ghost {
+    background-color: rgba(0,0,0,0);
+    border-width: 0;
+    color: #A89060;
+    font-size: 10px;
+    letter-spacing: 3px;
+    align-self: center;
+    margin-top: 8px;
+    cursor: arrow;
+    transition-property: color;
+    transition-duration: 0.3s;
+}
+.btn-back-ghost:hover { color: #C9A227; }
+
+/* ═══════════════════════════
+   SCREEN 4 — PLAY
+═══════════════════════════ */
+.screen-play {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+.play-era-tag {
+    -unity-font-definition: url('project://database/Assets/Resources/Fonts/Cinzel-Regular.ttf');
+    font-size: 11px;
+    letter-spacing: 5px;
+    color: #8B6914;
+    -unity-text-align: upper-center;
+    margin-bottom: 8px;
+}
+.play-title {
+    -unity-font-definition: url('project://database/Assets/Resources/Fonts/CinzelDecorative-Bold.ttf');
+    font-size: 52px;
+    color: #F0D060;
+    -unity-text-align: upper-center;
+}
+.play-desc {
+    -unity-font-definition: url('project://database/Assets/Resources/Fonts/CrimsonText-Italic.ttf');
+    -unity-font-style: italic;
+    font-size: 17px;
+    color: #EAD9B0;
+    -unity-text-align: upper-center;
+    white-space: normal;
+    max-width: 500px;
+    margin-top: 16px;
+    margin-bottom: 20px;
+}
+.play-note {
+    background-color: rgba(42,35,24,0.6);
+    border-width: 1px;
+    border-color: rgba(201,162,39,0.2);
+    border-left-width: 3px;
+    border-left-color: #C9A227;
+    padding: 16px 24px;
+    max-width: 500px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.play-note-text {
+    font-size: 14px;
+    color: #EAD9B0;
+    white-space: normal;
+}
+.play-buttons {
+    flex-direction: row;
+    justify-content: center;
+}
+.btn-play-action {
+    -unity-font-definition: url('project://database/Assets/Resources/Fonts/Cinzel-Regular.ttf');
+    background-color: #B89020;
+    border-width: 0;
+    color: #0A0806;
+    -unity-font-style: bold;
+    font-size: 12px;
+    letter-spacing: 2px;
+    padding: 12px 32px;
+    margin: 6px;
+    cursor: arrow;
+    transition-property: background-color;
+    transition-duration: 0.3s;
+}
+.btn-play-action:hover { background-color: #F0D060; }
+.btn-play-action--ghost {
+    background-color: rgba(42,35,24,0.8);
+    color: #C9A227;
+    border-width: 1px;
+    border-color: #C9A227;
+}
+.btn-play-action--ghost:hover {
+    background-color: rgba(201,162,39,0.15);
+}
+
+/* ── FADE OVERLAY ── */
+.fade-overlay {
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    background-color: #0A0806;
+    opacity: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   MAP LEVEL SCREEN — append to the bottom of MainMenu.uss
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── FULL-SCREEN MAP BACKGROUND ───────────────────────────── */
+.map-bg {
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    /* Point this at your Game_Map.png texture asset */
+    background-image: resource('UI/Game_Map');
+    -unity-background-scale-mode: scale-to-fit;
+    background-color: #1a140a;
+}
+
+/* Subtle dark vignette so badge buttons pop */
+.map-vignette {
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    background-color: rgba(0,0,0,0.22);
+}
+
+/* ── ERA BUTTON CONTAINERS ─────────────────────────────────
+   Each .map-btn is an absolutely-positioned column that holds:
+     • the badge image (VisualElement with background-image)
+     • a small era label
+     • an "Enter →" button
+   Adjust left/top percentages to match your map image.
+─────────────────────────────────────────────────────────── */
+.map-btn {
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+    width: 140px;
+    /* Subtle hover lift */
+    transition-property: translate;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+}
+.map-btn:hover {
+    translate: 0 -6px;
+}
+
+/* ── Individual badge positions (percentages) ── */
+/* Badge 1 — Ancient Egypt  (upper-left area of map) */
+.map-btn-ancient {
+    left:  18.5%;
+    top:   17.5%;
+}
+
+/* Badge 2 — Medieval Era  (centre of map) */
+.map-btn-medieval {
+    left:  44.5%;
+    top:   50.5%;
+}
+
+/* Badge 3 — Modern Era  (lower-right area) */
+.map-btn-modern {
+    left:  63.5%;
+    top:   66%;
+}
+
+/* ── BADGE IMAGE ───────────────────────────────────────────
+   The controller adds/removes .map-badge--gray at runtime.
+   Gold  = 1.png / 2.png / 3.png
+   Gray  = 2_gray.png / 3_gray.png  (set per-era in USS below)
+─────────────────────────────────────────────────────────── */
+.map-badge {
+    width:  80px;
+    height: 80px;
+    -unity-background-scale-mode: scale-to-fit;
+    margin-bottom: 6px;
+}
+
+/* Default (gold) images — overridden per era badge below */
+.map-btn-ancient  .map-badge { background-image: resource('UI/1'); }
+.map-btn-medieval .map-badge { background-image: resource('UI/2'); }
+.map-btn-modern   .map-badge { background-image: resource('UI/3'); }
+
+/* Gray (locked) overrides — controller adds this class to the VisualElement */
+.map-btn-medieval .map-badge--gray { background-image: resource('UI/2_gray'); }
+.map-btn-modern   .map-badge--gray { background-image: resource('UI/3_gray'); }
+
+/* ── ENTER BUTTON ──────────────────────────────────────────── */
+.map-enter-btn {
+    -unity-font-definition: url('project://database/Assets/Resources/Fonts/Cinzel-Regular.ttf');
+    background-color: rgba(185,144,32,0.88);
+    border-width: 0;
+    color: #0A0806;
+    -unity-font-style: bold;
+    font-size: 10px;
+    letter-spacing: 2px;
+    padding: 6px 18px;
+    -unity-text-align: middle-center;
+    cursor: arrow;
+    transition-property: background-color;
+    transition-duration: 0.25s;
+    width: 100%;
+}
+.map-enter-btn:hover { background-color: #F0D060; }
+.map-enter-btn:active { background-color: #C9A227; }
+
+/* Locked enter button */
+.map-enter-btn--locked {
+    background-color: rgba(80,68,48,0.5);
+    color: #888070;
+    cursor: arrow;
+}
+.map-enter-btn--locked:hover { background-color: rgba(80,68,48,0.5); }
+
+/* Whole locked marker is dimmed & non-interactive */
+.map-btn--locked {
+    opacity: 0.55;
+}
+
+/* ── BOTTOM HUD BAR ────────────────────────────────────────── */
+.map-hud {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(10,8,6,0.78);
+    border-top-width: 1px;
+    border-color: rgba(201,162,39,0.25);
+    padding: 10px 32px;
+}
+
+.map-hud-section {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.map-hud-label {
+    -unity-font-definition: url('project://database/Assets/Resources/Fonts/Cinzel-Regular.ttf');
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: #A89060;
+    margin-bottom: 4px;
+}
+
+.map-progress-track {
+    width: 220px;
+    margin-bottom: 4px;
+}
+
+.map-back-btn {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #A89060;
+    align-self: center;
+}
+
+/* ═══════════════════════════
+   LOADING SCREEN
+═══════════════════════════ */
+.loading-screen {
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    background-color: #0A0806;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.loading-title {
+    -unity-font-definition: url('project://database/Assets/Resources/Fonts/CinzelDecorative-Bold.ttf');
+    font-size: 32px;
+    color: #C9A227;
+    letter-spacing: 6px;
+    -unity-text-align: middle-center;
+    margin-bottom: 48px;
+    opacity: 0.85;
+}
+
+.loading-label {
+    -unity-font-definition: url('project://database/Assets/Resources/Fonts/Cinzel-Regular.ttf');
+    font-size: 14px;
+    color: #A89060;
+    letter-spacing: 4px;
+    -unity-text-align: middle-center;
+    margin-bottom: 20px;
+}
+
+.loading-bar-track {
+    width: 480px;
+    height: 6px;
+    background-color: rgba(201,162,39,0.15);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 24px;
+}
+
+.loading-bar-fill {
+    height: 100%;
+    width: 0%;
+    background-color: #C9A227;
+    border-radius: 3px;
+    transition-property: width;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+}
+
+.loading-hint {
+    -unity-font-definition: url('project://database/Assets/Resources/Fonts/CrimsonText-Italic.ttf');
+    -unity-font-style: italic;
+    font-size: 15px;
+    color: rgba(234,217,176,0.45);
+    -unity-text-align: middle-center;
+    letter-spacing: 1px;
+}
+
+.all-complete-banner {
+    position: absolute;
+    bottom: 80px;
+    left: 0;
+    right: 0;
+    align-items: center;
+    flex-direction: column;
+}
+
+.all-complete-title {
+    color: rgb(230, 200, 120);
+    font-size: 22px;
+    -unity-font-style: bold;
+    margin-bottom: 10px;
+}
+
+.fireworks-label {
+    font-size: 36px;
+    margin-bottom: 6px;
+}
+
+.btn-reset-progress {
+    background-color: rgba(20, 20, 20, 0.8);
+    border-color: rgb(180, 140, 60);
+    border-width: 1px;
+    border-radius: 8px;
+    color: rgb(180, 140, 60);
+    font-size: 14px;
+    padding: 6px 18px;
+    cursor: hand;
+}
+
+.btn-reset-progress:hover {
+    background-color: rgba(180, 140, 60, 0.2);
+}

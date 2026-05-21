@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3d2b5e5b8bd75781820de5be38f0970, type: 3}
+  m_Name: ExhibitData_earth
+  m_EditorClassIdentifier: Assembly-CSharp::ExhibitData
+  exhibitName: EARTH
+  pages:
+  - "For all of human history thousands and thousands of years\nno one had ever seen
+    what our planet actually looked like.\nWe lived on it, but we had never seen
+    it.\n \nThat changed on December 24, 1968, when astronaut\nWilliam Anders looked
+    out the window of Apollo 8\nand saw our blue planet rising over the Moon.\nHe
+    grabbed a camera and took the photo you see here.\nIt was the first time humans
+    ever saw Earth\nas a tiny, fragile ball floating in darkness."
+  - "That photograph changed the world.\nPeople saw for the first time that Earth
+    was small,\nbeautiful, and alone in a vast black universe.\nIt inspired a whole
+    generation to protect our planet.\n \nThe astronaut later said: \"We came all
+    this way\nto explore the Moon, and the most important thing\nwe discovered was
+    the Earth.\"\nSometimes the greatest discoveries are the ones\nthat help us see
+    home in a brand new way. \U0001F30D"
+  exhibitIllustration: {fileID: 5757750083339748195, guid: b4442cb8b2399a7c096b51a9bb230174, type: 3}
+  narratorClip: {fileID: 8300000, guid: 720dcda5346062e189c80fc7c00257ee, type: 3}

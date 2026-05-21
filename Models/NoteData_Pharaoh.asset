@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d75aa29b3caf8c61972b8e9be9acae5, type: 3}
+  m_Name: NoteData_Pharaoh
+  m_EditorClassIdentifier: Assembly-CSharp::NoteData
+  statueName: The Pharaoh
+  pages:
+  - 'This is a pharaoh, the king of Egypt!
+
+    A long, long time ago his nose
+
+    was
+    broken off by time and sand.
+
+
+    But his proud face still tells us:
+
+    "I
+    was powerful. I built great things."'
+  - "Pharaohs wore a special striped cloth\non their heads called a Nemes.\nOnly
+    the king was allowed to wear it!\n\nThis pharaoh watched over his people\nfor
+    thousands of years. \U0001F451"
+  statueIllustration: {fileID: 6943535168657398750, guid: fb730668a4bbb4fa7a85b8df4e07e49d, type: 3}
+  narratorClip: {fileID: 8300000, guid: 381ad61512ca8f1379e764d35235d77f, type: 3}

@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb3f43343ddb8f5c2914aa80d83bc0a6, type: 3}
+  m_Name: PuzzleData_Shape3
+  m_EditorClassIdentifier: Assembly-CSharp::PuzzleData
+  shapeName: Scarab
+  ghostOutline: {fileID: -3889474676473013081, guid: c32d1b645393a11649aa3edad496b9e0, type: 3}
+  assembledImage: {fileID: 7675826601332790545, guid: f352b6e10bfe1f8a8aae06bc8ed44b10, type: 3}
+  pieces:
+  - pieceName: top
+    pieceSprite: {fileID: 2455513822275430761, guid: 078cbd32666ce6cc08d209b1c1631620, type: 3}
+    left: 66
+    top: -5
+    width: 324
+    height: 311
+  - pieceName: middle
+    pieceSprite: {fileID: -5348974160857761915, guid: da2aa4f0ad1607817b1518d6179eb73f, type: 3}
+    left: 251
+    top: 120
+    width: 131
+    height: 290
+  - pieceName: bottom
+    pieceSprite: {fileID: -3742592120836699101, guid: 8abb49abaab65fe0ea936e039554d4e1, type: 3}
+    left: 22
+    top: 366
+    width: 415
+    height: 195
+  - pieceName: left
+    pieceSprite: {fileID: -2208510542369132325, guid: 3c4fb1101776614a4971a35a7a9e921d, type: 3}
+    left: -10
+    top: 88
+    width: 363
+    height: 340
+  - pieceName: right
+    pieceSprite: {fileID: -4345969612696422427, guid: 9726e79ad38bb9230bb50f55e900ce97, type: 3}
+    left: 340
+    top: 10
+    width: 213
+    height: 470

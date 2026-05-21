@@ -1,0 +1,30 @@
+fileFormatVersion: 2
+guid: 786aa3e0ff0b576488cca48fe04149d5
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - foundObjectSound: {fileID: 8300000, guid: fb6d4c56f273a844bb1deaee0d1f589b, type: 3}
+  - warningSound: {fileID: 8300000, guid: 27cd369e6dc931e49a13f1ccd6f8f351, type: 3}
+  - winSound: {fileID: 8300000, guid: 4756615f7bd963d4a9cd581ffcc36061, type: 3}
+  - loseSound: {fileID: 8300000, guid: 98760d913b59e8645951d20c285150fb, type: 3}
+  - openSound: {fileID: 8300000, guid: ab898a6f5c5ea654e8f6056923aab653, type: 3}
+  - closeSound: {fileID: 8300000, guid: 217b9f7426038aa478ceeccd08c940fa, type: 3}
+  - popupPanel: {instanceID: 0}
+  - titleText: {instanceID: 0}
+  - eraText: {instanceID: 0}
+  - infoText: {instanceID: 0}
+  - factText: {instanceID: 0}
+  - progressText: {instanceID: 0}
+  - foundText: {instanceID: 0}
+  - timerText: {instanceID: 0}
+  - learnCompletePanel: {instanceID: 0}
+  - challengePanel: {instanceID: 0}
+  - winPanel: {instanceID: 0}
+  - losePanel: {instanceID: 0}
+  - playerController: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

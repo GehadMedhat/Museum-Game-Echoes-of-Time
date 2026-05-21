@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d75aa29b3caf8c61972b8e9be9acae5, type: 3}
+  m_Name: NoteData_Horus
+  m_EditorClassIdentifier: Assembly-CSharp::NoteData
+  statueName: Horus
+  pages:
+  - 'I am Horus, the god of the sky!
+
+    Do you see my falcon head?
+
+    Ancient
+    Egyptians believed I watched
+
+    over the pharaoh and kept him safe.
+
+
+    My
+    eye is a special symbol,
+
+    the Eye of Horus means protection.
+
+    People
+    would wear it as a lucky charm!'
+  - "Fun Fact:\nEvery morning, Horus flew across the sky\nas the sun, and at night,
+    he became\nthe stars. Pretty cool, right?\n\nCan you spot my falcon wings\nsomewhere
+    in this hall? \U0001F441\uFE0F"
+  statueIllustration: {fileID: -6591679352285952627, guid: db9741e5ed8077ca7973a9b00dfa9f1a, type: 3}
+  narratorClip: {fileID: 8300000, guid: cb35c47bd7a16205fae13441103d9648, type: 3}

@@ -1,0 +1,335 @@
+/*  NotePanel.uss  —  EchoesOfTime  (Ancient Egypt)
+    Sprites assigned at runtime via NoteUI.cs Inspector fields:
+      • sideBarSprite    → hieroglyph-sidebar background
+      • piecesSprite     → sidebar-pieces top & bottom
+      • dividerSprite    → divider-img
+      • bottomSprite     → bottom-img                          */
+
+/* ══════════════════════════════════════════════════
+   OVERLAY
+══════════════════════════════════════════════════ */
+.overlay {
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    background-color: rgba(8, 4, 0, 0.80);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* ══════════════════════════════════════════════════
+   NOTE CARD
+══════════════════════════════════════════════════ */
+.note-card {
+    width: 820px;
+    min-height: 500px;
+    max-height: 700px;
+    background-color: rgb(240, 220, 175);
+    border-radius: 14px;
+    border-width: 5px;
+    border-color: rgb(172, 118, 32);
+    /* sidebar is 80px wide — content pushed right of it */
+    padding-left: 92px;
+    padding-right: 36px;
+    padding-top: 20px;
+    padding-bottom: 16px;
+    flex-direction: column;
+    align-items: stretch;
+    /* Changed from 'hidden' — was clipping hit-test regions of absolute-positioned buttons */
+    overflow: visible;
+}
+
+/* ══════════════════════════════════════════════════
+   INNER FRAME
+══════════════════════════════════════════════════ */
+.inner-frame {
+    position: absolute;
+    left: 85px;
+    right: 8px;
+    top: 8px;
+    bottom: 8px;
+    border-width: 1px;
+    border-color: rgba(172, 118, 32, 0.40);
+    border-radius: 8px;
+    /* Decorative only — must not block button clicks */
+    picking-mode: ignore;
+}
+
+/* ══════════════════════════════════════════════════
+   HIEROGLYPH SIDEBAR
+   background-image set at runtime from sideBarSprite
+══════════════════════════════════════════════════ */
+.hieroglyph-sidebar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 80px;
+    border-radius: 10px 0 0 10px;
+    /* Fallback colour shown before sprite is assigned */
+    background-color: rgb(52, 28, 4);
+    /* Sprite fills the whole sidebar */
+    -unity-background-scale-mode: stretch-to-fill;
+    border-right-width: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    overflow: hidden;
+    /* Decorative only — must not block button clicks */
+    picking-mode: ignore;
+}
+
+/* ── pieces.png — sparkle ornament top & bottom of sidebar ── */
+.sidebar-pieces {
+    width: 64px;
+    height: 64px;
+    /* background-image set at runtime from piecesSprite */
+    background-color: rgba(0,0,0,0);
+    -unity-background-scale-mode: scale-to-fit;
+    flex-shrink: 0;
+    picking-mode: ignore;
+}
+/* Flip vertically for the bottom copy */
+.sidebar-pieces--flip {
+    rotate: 180deg;
+}
+
+/* ── Hieroglyph text label (overlaid on sidebar image) ── */
+.hieroglyph-symbols {
+    flex-grow: 1;
+    color: rgb(255, 225, 100);
+    font-size: 16px;
+    -unity-text-align: middle-center;
+    -unity-font-style: bold;
+    white-space: normal;
+    letter-spacing: 2px;
+    picking-mode: ignore;
+}
+
+/* ══════════════════════════════════════════════════
+   CLOSE BUTTON
+══════════════════════════════════════════════════ */
+.close-btn {
+    position: absolute;
+    top: 14px;
+    left: 88px;
+    width: 36px;
+    height: 36px;
+    background-color: rgba(100, 54, 8, 0.45);
+    border-radius: 18px;
+    border-width: 1px;
+    border-color: rgba(172, 118, 32, 0.50);
+    color: rgb(90, 48, 8);
+    font-size: 18px;
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    padding: 0;
+}
+
+/* ══════════════════════════════════════════════════
+   NARRATOR BUTTON
+══════════════════════════════════════════════════ */
+.narrator-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 46px;
+    height: 46px;
+    background-color: rgb(218, 165, 60);
+    border-radius: 23px;
+    border-width: 3px;
+    border-color: rgb(115, 70, 8);
+    color: rgb(255, 240, 180);
+    font-size: 22px;
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    padding: 0;
+}
+.narrator-btn--playing {
+    background-color: rgb(240, 190, 60);
+    border-color: rgb(255, 220, 80);
+    border-width: 4px;
+    color: rgb(75, 38, 4);
+}
+
+/* ══════════════════════════════════════════════════
+   READ STAMP
+══════════════════════════════════════════════════ */
+.read-stamp {
+    position: absolute;
+    top: 64px;
+    right: 14px;
+    background-color: rgba(128, 14, 14, 0.10);
+    border-width: 2px;
+    border-color: rgb(138, 18, 18);
+    border-radius: 16px 4px 16px 4px;
+    color: rgb(138, 18, 18);
+    font-size: 10px;
+    -unity-font-style: bold;
+    padding-left: 8px; padding-right: 8px;
+    padding-top: 3px;  padding-bottom: 3px;
+    letter-spacing: 3px;
+    display: none;
+}
+
+/* ══════════════════════════════════════════════════
+   STATUE NAME
+══════════════════════════════════════════════════ */
+.statue-name {
+    font-size: 30px;
+    -unity-font-style: bold;
+    color: rgb(72, 36, 4);
+    -unity-text-align: middle-center;
+    margin-top: 2px;
+    margin-bottom: 6px;
+    letter-spacing: 6px;
+}
+
+/* ══════════════════════════════════════════════════
+   DIVIDER IMAGE  — divider_bar.png
+   background-image set at runtime from dividerSprite
+══════════════════════════════════════════════════ */
+.divider-img {
+    width: 100%;
+    height: 36px;
+    /* Fallback thin line if sprite not yet assigned */
+    background-color: rgba(172, 118, 32, 0.0);
+    -unity-background-scale-mode: stretch-to-fill;
+    margin-bottom: 14px;
+    flex-shrink: 0;
+}
+
+/* ══════════════════════════════════════════════════
+   BODY ROW
+══════════════════════════════════════════════════ */
+.body-row {
+    flex-direction: row;
+    align-items: flex-start;
+    flex-grow: 1;
+    margin-bottom: 4px;
+}
+
+.left-col {
+    width: 220px;
+    flex-shrink: 0;
+    align-items: center;
+    flex-direction: column;
+    margin-right: 24px;
+}
+
+.right-col {
+    flex-grow: 1;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+/* ══════════════════════════════════════════════════
+   ILLUSTRATION
+══════════════════════════════════════════════════ */
+.illustration {
+    width: 200px;
+    height: 200px;
+    align-self: center;
+    border-radius: 100px;
+    border-width: 4px;
+    border-color: rgb(172, 118, 32);
+    background-color: rgba(155, 105, 42, 0.25);
+    -unity-background-scale-mode: scale-to-fit;
+    margin-bottom: 14px;
+}
+
+/* ══════════════════════════════════════════════════
+   CATEGORY BADGE
+══════════════════════════════════════════════════ */
+.category-badge {
+    align-self: center;
+    font-size: 9px;
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    letter-spacing: 2px;
+    padding-left: 10px; padding-right: 10px;
+    padding-top: 5px;   padding-bottom: 5px;
+    border-radius: 16px 3px 16px 3px;
+    border-width: 2px;
+    color: rgb(255, 235, 165);
+    background-color: rgb(125, 76, 18);
+    border-color: rgb(208, 152, 50);
+}
+.category-badge--general  { background-color: rgb(125, 76, 18);  border-color: rgb(208, 152, 50); color: rgb(255, 235, 165); }
+.category-badge--death    { background-color: rgb(58,  16, 16);  border-color: rgb(165,  48, 48); color: rgb(255, 175, 175); }
+.category-badge--gods     { background-color: rgb(95,  70,  8);  border-color: rgb(232, 188, 48); color: rgb(255, 242, 140); }
+.category-badge--pharaoh  { background-color: rgb(18,  46, 88);  border-color: rgb(75,  138,215); color: rgb(175, 215, 255); }
+.category-badge--afterlife{ background-color: rgb(22,  65, 60);  border-color: rgb(55,  172,158); color: rgb(155, 238, 228); }
+
+/* ══════════════════════════════════════════════════
+   NOTE TEXT
+══════════════════════════════════════════════════ */
+.note-text {
+    font-size: 18px;
+    color: rgb(58, 28, 4);
+    white-space: normal;
+    -unity-text-align: upper-left;
+    flex-grow: 1;
+    border-left-width: 3px;
+    border-left-color: rgb(172, 118, 32);
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    padding-left: 14px;
+}
+
+/* ══════════════════════════════════════════════════
+   SPACER
+══════════════════════════════════════════════════ */
+.spacer { flex-grow: 1; min-height: 6px; }
+
+/* ══════════════════════════════════════════════════
+   BOTTOM IMAGE  — bottom.png (winged leaf ornament)
+   background-image set at runtime from bottomSprite
+══════════════════════════════════════════════════ */
+.bottom-img {
+    width: 100%;
+    height: 48px;
+    background-color: rgba(0,0,0,0);
+    -unity-background-scale-mode: scale-to-fit;
+    margin-bottom: 6px;
+    flex-shrink: 0;
+    align-self: center;
+}
+
+/* ══════════════════════════════════════════════════
+   NAV ROW
+══════════════════════════════════════════════════ */
+.nav-row {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2px;
+}
+.nav-btn {
+    background-color: rgb(110, 65, 18);
+    border-radius: 8px;
+    border-width: 2px;
+    border-color: rgb(172, 118, 32);
+    color: rgb(255, 240, 210);
+    font-size: 15px;
+    -unity-font-style: bold;
+    padding-left: 22px; padding-right: 22px;
+    padding-top: 10px;  padding-bottom: 10px;
+    letter-spacing: 2px;
+}
+.nav-btn:hover { background-color: rgb(110, 65, 18); }
+
+.page-indicator-row {
+    flex-direction: row;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: center;
+}
+.page-indicator {
+    font-size: 15px;
+    color: rgb(125, 75, 28);
+    -unity-text-align: middle-center;
+}

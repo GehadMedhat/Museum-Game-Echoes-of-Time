@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3d2b5e5b8bd75781820de5be38f0970, type: 3}
+  m_Name: ExhibitData_radio
+  m_EditorClassIdentifier: Assembly-CSharp::ExhibitData
+  exhibitName: THE RADIO
+  pages:
+  - "Before the internet, before TV, the radio was\nthe most exciting invention in
+    the world!\nFamilies would gather around it every evening\nto listen to music,
+    news, and stories together\njust like you might watch a show as a family today.\n
+    \nIn 1901, Guglielmo Marconi sent the first ever\nradio signal across the entire
+    Atlantic Ocean.\nPeople thought he was making it up how could\nsound travel invisibly
+    through the air?!"
+  - "In 1938 a radio drama called \"War of the Worlds\"\npretended that aliens were
+    invading Earth.\nThousands of people who tuned in late\nthought it was a real
+    news report and panicked!\n \nRadio waves are passing through your body\nright
+    now as you read this. You just can't feel them.\nThey carry signals for phones,
+    Wi-Fi, and yes\nstill radio stations broadcasting music every day. \U0001F4FB"
+  exhibitIllustration: {fileID: 1875917246518206917, guid: 7b428f84e9c0a67dca605b8f1b8e9ad8, type: 3}
+  narratorClip: {fileID: 8300000, guid: 9a08f3c688aa6a0d0b4b4b8abef99169, type: 3}

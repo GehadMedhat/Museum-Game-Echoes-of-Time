@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3d2b5e5b8bd75781820de5be38f0970, type: 3}
+  m_Name: CircuitInfoData
+  m_EditorClassIdentifier: Assembly-CSharp::ExhibitData
+  exhibitName: Early Electric Circuit
+  pages:
+  - "Long ago, scientists discovered that electricity could travel through wires
+    to power things like lights and machines.\n\nA circuit is a path that electricity
+    flows through. It needs three things to work:\n\n\u26A1 A Battery : gives the
+    electricity its energy.\n\n\U0001F4A1 A Bulb : lights up when electricity passes
+    through it.\n\n\U0001F518 A Switch : controls when the electricity flows.\n\nIf
+    any piece is missing or broken, the electricity stops and the light goes out.\n\nCan
+    you fix this circuit and bring the light back?"
+  exhibitIllustration: {fileID: -4483910542341525416, guid: 120a881a00b2de045be70e834dd059d5, type: 3}
+  narratorClip: {fileID: 8300000, guid: c30bbd4b4ed260caeb4e1944ff0e3649, type: 3}

@@ -1,0 +1,100 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+  <Style src="NotePanel_Modern.uss" />
+  <ui:VisualElement name="overlay" class="overlay">
+    <ui:VisualElement name="note-card" class="note-card">
+
+      <!-- ═══════════════════════════════════════════
+           BACKGROUND PANEL SPRITE  (panel_bg_01 etc.)
+           Sits behind everything as a texture layer
+           ═══════════════════════════════════════════ -->
+      <ui:VisualElement name="bg-panel" class="bg-panel" />
+
+      <!-- ═══════════════════════════════════════════
+           OVERLAY DECORATIONS (circuit / dots / hex)
+           ═══════════════════════════════════════════ -->
+      <ui:VisualElement name="overlay-circuit" class="overlay-circuit" />
+      <ui:VisualElement name="overlay-corner-tl" class="overlay-corner overlay-corner--tl" />
+      <ui:VisualElement name="overlay-corner-tr" class="overlay-corner overlay-corner--tr" />
+
+      <!-- ═══════════════════════════════════════════
+           TOP DECORATION BAR  (top_decor_01 / 02)
+           ═══════════════════════════════════════════ -->
+      <ui:VisualElement name="top-decor" class="top-decor" />
+
+      <!-- ═══════════════════════════════════════════
+           TITLE ROW
+           ═══════════════════════════════════════════ -->
+      <ui:Label name="statue-name" class="statue-name" text="EXHIBIT NAME" />
+
+      <!-- Accent bar under title (accent_bar_01 sprite) -->
+      <ui:VisualElement name="accent-bar" class="accent-bar" />
+
+<!-- ═══════════════════════════════════════════
+           BODY  — left col (image) | right col (text)
+           ═══════════════════════════════════════════ -->
+      <ui:VisualElement class="body-row">
+
+        <!-- LEFT: image frame -->
+        <ui:VisualElement class="left-col">
+          <ui:VisualElement name="img-frame" class="img-frame">
+            <ui:VisualElement name="illustration" class="illustration" />
+          </ui:VisualElement>
+          <!-- Side decoration bar (side_decor_01) -->
+          <ui:VisualElement name="side-decor" class="side-decor" />
+        </ui:VisualElement>
+
+        <!-- RIGHT: info icon + timeline text bullets -->
+        <ui:VisualElement class="right-col">
+          <ui:VisualElement class="text-row text-row--first">
+            <ui:VisualElement class="timeline-dot timeline-dot--info">
+              <ui:Label class="dot-icon" text="i" />
+            </ui:VisualElement>
+            <ui:VisualElement class="timeline-line" />
+            <ui:Label name="note-text" class="note-text" text="Exhibit text goes here." />
+          </ui:VisualElement>
+        </ui:VisualElement>
+
+      </ui:VisualElement>
+
+      <!-- Spacer -->
+      <ui:VisualElement class="spacer" />
+
+      <!-- ═══════════════════════════════════════════
+           BOTTOM DECORATION  (bottom_decor_01 sprite)
+           ═══════════════════════════════════════════ -->
+      <ui:VisualElement name="bottom-decor" class="bottom-decor" />
+
+      <!-- ═══════════════════════════════════════════
+           NAV ROW
+           ═══════════════════════════════════════════ -->
+      <ui:VisualElement class="nav-row">
+
+        <!-- Prev arrow button -->
+        <ui:Button name="prev-btn" class="nav-arrow-btn" text="◁" />
+
+        <!-- Page indicator centred -->
+        <ui:VisualElement class="page-indicator-wrap">
+          <ui:Label name="page-indicator" class="page-indicator" text="" />
+        </ui:VisualElement>
+
+        <!-- Next arrow button -->
+        <ui:Button name="next-btn" class="nav-arrow-btn" text="▷" />
+
+
+      </ui:VisualElement>
+
+      <!-- Start Repair — shown only for circuit puzzle -->
+      <ui:Button name="start-repair-btn" class="start-repair-btn" text="🔧  START REPAIR  →" />
+
+      <!-- ── CLOSE BUTTON — last in DOM so it renders on top of everything ── -->
+      <ui:Button name="close-btn" class="close-btn" text="✕" />
+
+      <!-- ── NARRATOR / AUDIO BUTTON — last in DOM so it renders on top of everything ── -->
+      <ui:VisualElement class="narrator-wrap">
+        <ui:Button name="narrator-btn" class="narrator-btn" text="🔊" />
+        <ui:Label class="narrator-label" text="AUDIO" />
+      </ui:VisualElement>
+
+    </ui:VisualElement>
+  </ui:VisualElement>
+</ui:UXML>

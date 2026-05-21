@@ -1,0 +1,179 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="False">
+
+  <Style src="MainMenu.uss" />
+
+  <ui:VisualElement name="root" class="root-container">
+
+    <!-- BACKGROUND -->
+    <ui:VisualElement name="bg-layer" class="bg-layer" picking-mode="Ignore">
+      <ui:VisualElement name="orb-1" class="orb orb-1" picking-mode="Ignore" />
+      <ui:VisualElement name="orb-2" class="orb orb-2" picking-mode="Ignore" />
+      <ui:VisualElement name="orb-3" class="orb orb-3" picking-mode="Ignore" />
+    </ui:VisualElement>
+
+    <!-- DECORATIVE BORDER FRAME -->
+    <ui:VisualElement name="border-frame" class="border-frame" picking-mode="Ignore">
+      <ui:VisualElement name="corner-tl" class="corner corner-tl" picking-mode="Ignore" />
+      <ui:VisualElement name="corner-br" class="corner corner-br" picking-mode="Ignore" />
+    </ui:VisualElement>
+
+    <!-- PARTICLE ANCHOR -->
+    <ui:VisualElement name="particle-anchor" class="particle-anchor" picking-mode="Ignore" />
+
+    <!-- ═══════════════════════
+         SCREEN 1 — HOME
+    ═══════════════════════ -->
+    <ui:VisualElement name="screen-home" class="screen screen-home screen--active">
+
+      <ui:VisualElement name="home-top" class="home-top">
+        <ui:Label name="ornament"   class="ornament"   text="✦  ✦  ✦" />
+        <ui:Label name="title-main" class="title-main" text="Echoes of Time" />
+        <ui:Label name="title-sub"  class="title-sub"  text="Interactive Museum Experience" />
+
+        <ui:VisualElement name="divider-home" class="divider-gold-wrap">
+          <ui:VisualElement name="div-line-l1"   class="divider-line" />
+          <ui:Label         name="div-diamond-1" class="divider-diamond" text="◆" />
+          <ui:VisualElement name="div-line-r1"   class="divider-line" />
+        </ui:VisualElement>
+
+        <ui:Label name="tagline" class="tagline"
+          text="History has been scattered across the halls of time.&#10;Step inside. Restore the artifacts. Bring the past back to life." />
+      </ui:VisualElement>
+
+      <ui:VisualElement name="info-buttons" class="info-buttons">
+        <ui:Button name="btn-idea"       class="btn-info" text="💡  Game Idea"  />
+        <ui:Button name="btn-goal"       class="btn-info" text="🎯  Game Goal"  />
+        <ui:Button name="btn-developers" class="btn-info" text="🏛  Developers" />
+      </ui:VisualElement>
+
+      <ui:VisualElement name="divein-wrap" class="divein-wrap">
+        <ui:Label  name="divein-label" class="divein-label" text="Begin your journey" />
+        <ui:Button name="btn-divein"   class="btn-divein"   text="Let's Dive Into the Levels  ▶▶" />
+      </ui:VisualElement>
+
+    </ui:VisualElement>
+
+    <!-- ═══════════════════════
+         SCREEN 2 — INFO
+    ═══════════════════════ -->
+    <ui:VisualElement name="screen-info" class="screen screen-info screen--hidden">
+
+      <ui:VisualElement name="info-header" class="info-header">
+        <ui:Label name="info-category" class="info-category" text="Game Idea" />
+        <ui:Label name="info-title"    class="info-title"    text="The Idea Behind the Game" />
+        <ui:VisualElement name="divider-info" class="divider-gold-wrap">
+          <ui:VisualElement name="div-line-l2"   class="divider-line" />
+          <ui:Label         name="div-diamond-2" class="divider-diamond" text="◆" />
+          <ui:VisualElement name="div-line-r2"   class="divider-line" />
+        </ui:VisualElement>
+      </ui:VisualElement>
+
+      <ui:ScrollView name="info-body" class="info-body" vertical-scroller-visibility="Auto">
+        <ui:Label name="info-body-text" class="info-body-text" enable-rich-text="true" text="" />
+      </ui:ScrollView>
+
+      <ui:Button name="btn-back-info" class="btn-back" text="←  Back to Museum" />
+
+    </ui:VisualElement>
+
+    <!-- ═══════════════════════
+         SCREEN 3 — LEVELS (MAP)
+    ═══════════════════════ -->
+    <ui:VisualElement name="screen-levels" class="screen screen-levels screen--hidden">
+
+      <!-- Full-screen map image -->
+      <ui:VisualElement name="map-bg" class="map-bg" picking-mode="Ignore" />
+
+      <!-- Dark vignette so buttons pop -->
+      <ui:VisualElement name="map-vignette" class="map-vignette" picking-mode="Ignore" />
+
+      <!-- ANCIENT — always unlocked, always gold -->
+      <ui:VisualElement name="map-btn-ancient" class="map-btn map-btn-ancient">
+        <ui:VisualElement name="map-badge-ancient" class="map-badge map-badge--gold" picking-mode="Ignore" />
+        <ui:Label name="map-label-ancient" class="map-era-label"/>
+        <ui:Button name="card-cta-ancient" class="map-enter-btn" text="Enter  →" />
+      </ui:VisualElement>
+
+      <!-- MEDIEVAL -->
+      <ui:VisualElement name="map-btn-medieval" class="map-btn map-btn-medieval map-btn--locked">
+        <ui:VisualElement name="map-badge-medieval" class="map-badge map-badge--gray" picking-mode="Ignore" />
+        <ui:Label name="map-label-medieval" class="map-era-label"/>
+        <ui:Button name="card-cta-medieval" class="map-enter-btn map-enter-btn--locked" text="🔒 Locked" />
+      </ui:VisualElement>
+
+      <!-- MODERN -->
+      <ui:VisualElement name="map-btn-modern" class="map-btn map-btn-modern map-btn--locked">
+        <ui:VisualElement name="map-badge-modern" class="map-badge map-badge--gray" picking-mode="Ignore" />
+        <ui:Label name="map-label-modern" class="map-era-label"/>
+        <ui:Button name="card-cta-modern" class="map-enter-btn map-enter-btn--locked" text="🔒 Locked" />
+      </ui:VisualElement>
+
+<!-- ALL COMPLETE BANNER — hidden until all 3 eras done -->
+<ui:VisualElement name="all-complete-banner" class="all-complete-banner hidden">
+  <ui:Label name="fireworks-label" class="fireworks-label" text="🎆 🎇 🎆" />
+  <ui:Label class="all-complete-title" text="You explored all 3 halls!" />
+  <ui:Button name="btn-reset-progress" class="btn-reset-progress" text="↺ Reset Progress?" />
+</ui:VisualElement>
+
+      <!-- BOTTOM HUD -->
+      <ui:VisualElement name="map-hud" class="map-hud">
+
+        <ui:VisualElement name="map-hud-left" class="map-hud-section">
+          <ui:Label name="map-progress-label" class="map-hud-label" text="MUSEUM PROGRESS" />
+          <ui:VisualElement name="progress-bar-track" class="progress-bar-track map-progress-track">
+            <ui:VisualElement name="progress-fill" class="progress-fill" />
+          </ui:VisualElement>
+          <ui:Label name="progress-text" class="map-hud-label" text="1 of 3 Eras Unlocked" />
+        </ui:VisualElement>
+
+        <ui:Button name="btn-back-levels" class="btn-back-ghost map-back-btn" text="←  Back to Entrance" />
+
+      </ui:VisualElement>
+
+    </ui:VisualElement>
+
+    <!-- ═══════════════════════
+         SCREEN 4 — PLAY
+    ═══════════════════════ -->
+    <ui:VisualElement name="screen-play" class="screen screen-play screen--hidden">
+
+      <ui:Label name="play-era-tag" class="play-era-tag" text="Ancient Egypt · Level 1" />
+      <ui:Label name="play-title"   class="play-title"   text="Ancient Hall" />
+
+      <ui:VisualElement name="divider-play" class="divider-gold-wrap">
+        <ui:VisualElement name="div-line-l3"   class="divider-line" />
+        <ui:Label         name="div-diamond-3" class="divider-diamond" text="◆" />
+        <ui:VisualElement name="div-line-r3"   class="divider-line" />
+      </ui:VisualElement>
+
+      <ui:Label name="play-desc" class="play-desc"
+        text="Five sacred artifacts have been scattered. Explore every corner, restore each piece, and hear the voices of Ancient Egypt come alive." />
+
+      <ui:VisualElement name="play-note" class="play-note">
+        <ui:Label name="play-note-text" class="play-note-text" enable-rich-text="true"
+          text="&lt;b&gt;Loading Scene…&lt;/b&gt;&#10;The Unity scene is being prepared. You will be transported to the hall momentarily." />
+      </ui:VisualElement>
+
+      <ui:VisualElement name="play-buttons" class="play-buttons">
+        <ui:Button name="btn-mark-complete" class="btn-play-action"                      text="✓  Mark Level Complete (Test)" />
+        <ui:Button name="btn-back-play"     class="btn-play-action btn-play-action--ghost" text="←  Back to Levels" />
+      </ui:VisualElement>
+
+    </ui:VisualElement>
+
+    <!-- LOADING SCREEN -->
+    <ui:VisualElement name="loading-screen" class="loading-screen">
+      <ui:Label name="loading-title" class="loading-title" text="✦  ECHOES OF TIME  ✦" />
+      <ui:Label name="loading-label" class="loading-label" text="Loading..." />
+      <ui:VisualElement name="loading-bar-track" class="loading-bar-track">
+        <ui:VisualElement name="loading-bar-fill" class="loading-bar-fill" />
+      </ui:VisualElement>
+      <ui:Label name="loading-hint" class="loading-hint" text="Restoring the artifacts of history..." />
+    </ui:VisualElement>
+
+    <!-- FADE OVERLAY (transition layer) -->
+    <ui:VisualElement name="fade-overlay" class="fade-overlay" picking-mode="Ignore" />
+
+  </ui:VisualElement>
+
+</ui:UXML>

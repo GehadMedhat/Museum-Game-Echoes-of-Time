@@ -1,0 +1,536 @@
+/* ═══════════════════════════════════════════════════════════════════════
+   CircuitPuzzleUI.uss  —  Wide sidebar, fancy kid-friendly
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* ─── Root ─────────────────────────────────────────────────────────── */
+.root-container {
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.scrim {
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 8, 20, 0.82);
+}
+
+/* ═══ NOTE PANEL ════════════════════════════════════════════════════ */
+.note-panel {
+    width: 92%;
+    height: 88%;
+    flex-direction: column;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-left-width: 3px;
+    border-right-width: 3px;
+    border-top-width: 3px;
+    border-bottom-width: 3px;
+    border-color: rgb(0, 200, 240);
+    background-color: rgb(14, 22, 38);
+    overflow: hidden;
+}
+
+/* ─── Header — solid cyan bar ──────────────────────────────────────── */
+.note-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 50px;
+    background-color: rgb(0, 180, 220);
+    flex-shrink: 0;
+}
+
+.note-header-left {
+    flex-direction: row;
+    align-items: center;
+}
+
+.note-icon-badge {
+    width: 30px;
+    height: 30px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: rgb(8, 18, 36);
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+.note-icon {
+    font-size: 17px;
+    color: rgb(0, 220, 255);
+    -unity-text-align: middle-center;
+}
+
+.note-title {
+    font-size: 16px;
+    color: rgb(8, 18, 36);
+    -unity-font-style: bold;
+    letter-spacing: 3px;
+}
+
+.hearts-container {
+    flex-direction: row;
+    align-items: center;
+}
+
+.heart {
+    font-size: 26px;
+    margin-left: 5px;
+    transition-duration: 0.4s;
+    transition-property: opacity, scale;
+}
+
+.heart-active  { color: rgb(200, 20, 50);  opacity: 1;    scale: 1 1;       }
+.heart-lost    { color: rgb(8, 18, 36);    opacity: 0.22; scale: 0.75 0.75; }
+
+/* ─── Note Body ────────────────────────────────────────────────────── */
+.note-body {
+    flex-direction: row;
+    flex-grow: 1;
+}
+
+/* ─── Puzzle Canvas ────────────────────────────────────────────────── */
+.puzzle-canvas {
+    flex-grow: 1;
+    position: relative;
+    background-color: rgb(8, 14, 26);
+    border-right-width: 3px;
+    border-right-color: rgb(0, 180, 220);
+    overflow: hidden;
+}
+
+.wire-canvas {
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+}
+
+/* ─── Components — zero decoration, original sizes ─────────────────── */
+.component {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0);
+    border-width: 0;
+    padding: 0;
+    cursor: move;
+    transition-duration: 0.15s;
+    transition-property: scale, opacity;
+}
+
+.component:hover { scale: 1.08 1.08; opacity: 0.88; }
+
+.battery-comp { width: 260px; height: 160px; }
+.bulb-comp    { width: 210px; height: 250px; }
+.switch-comp  { width: 240px; height: 145px; }
+.wire-comp    { width: 320px; height: 180px; }
+
+.wire-green-comp  { left: 10px;  top: 10px; }
+.wire-yellow-comp { left: 350px; top: 10px; }
+.wire-orange-comp { left: 690px; top: 10px; }
+
+/* ═══ SIDEBAR — wider, more breathing room ══════════════════════════ */
+.note-sidebar {
+    width: 290px;
+    flex-direction: column;
+    padding-top: 14px;
+    padding-bottom: 16px;
+    padding-left: 14px;
+    padding-right: 14px;
+    background-color: rgb(10, 17, 30);
+    flex-shrink: 0;
+}
+
+/* ─── Hint box ──────────────────────────────────────────────────────── */
+.hint-box {
+    align-items: center;
+    margin-bottom: 12px;
+    background-color: rgb(14, 22, 38);
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-color: rgb(0, 180, 220);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.hint-label {
+    font-size: 11px;
+    color: rgb(0, 200, 240);
+    margin-bottom: 8px;
+    -unity-font-style: bold;
+    -unity-text-align: upper-center;
+    letter-spacing: 3px;
+}
+
+/* Hint image — much bigger now ──────────────────────────────────────── */
+.hint-image {
+    width: 258px;
+    height: 190px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: rgba(0, 180, 220, 0.10);
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-color: rgba(0, 180, 220, 0.55);
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+/* ─── Divider ──────────────────────────────────────────────────────── */
+.divider {
+    height: 2px;
+    background-color: rgb(0, 170, 210);
+    margin-top: 2px;
+    margin-bottom: 10px;
+    margin-left: 4px;
+    margin-right: 4px;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+.spacer { flex-grow: 1; }
+
+/* ─── Checklist heading ─────────────────────────────────────────────── */
+.side-heading {
+    font-size: 12px;
+    color: rgb(0, 200, 240);
+    -unity-font-style: bold;
+    margin-bottom: 10px;
+    letter-spacing: 3px;
+}
+
+/* ─── Checklist rows ────────────────────────────────────────────────── */
+.checklist { flex-direction: column; }
+
+.check-row {
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 9px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 8px;
+    padding-right: 8px;
+    background-color: rgba(0, 180, 220, 0.06);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-color: rgba(0, 180, 220, 0.18);
+}
+
+/* Filled circle dot */
+.check-icon {
+    width: 14px;
+    height: 14px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-color: rgb(0, 180, 220);
+    background-color: rgba(0, 0, 0, 0);
+    margin-right: 10px;
+    flex-shrink: 0;
+    transition-duration: 0.25s;
+    transition-property: background-color, border-color;
+}
+
+.check-icon.done {
+    background-color: rgb(0, 220, 255);
+    border-color: rgb(0, 220, 255);
+}
+
+.check-text {
+    font-size: 12px;
+    color: rgb(185, 215, 235);
+    flex-grow: 1;
+}
+
+.check-text.done {
+    color: rgb(0, 220, 255);
+}
+
+/* Number badge on the right of each row */
+.check-badge {
+    font-size: 10px;
+    color: rgba(0, 180, 220, 0.55);
+    -unity-font-style: bold;
+    margin-left: 4px;
+}
+
+/* ─── CHECK button ──────────────────────────────────────────────────── */
+.check-button {
+    background-color: rgb(0, 190, 235);
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    color: rgb(6, 14, 28);
+    font-size: 14px;
+    -unity-font-style: bold;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    margin-bottom: 7px;
+    cursor: link;
+    letter-spacing: 2px;
+    transition-duration: 0.12s;
+    transition-property: background-color, scale;
+}
+
+.check-button:hover  { background-color: rgb(0, 215, 255); scale: 1.02 1.02; }
+.check-button:active { background-color: rgb(0, 155, 195); scale: 0.98 0.98; }
+
+/* ─── RESET button ──────────────────────────────────────────────────── */
+.reset-button {
+    background-color: rgba(0, 190, 235, 0.10);
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-color: rgba(0, 190, 235, 0.50);
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    color: rgb(0, 190, 235);
+    font-size: 12px;
+    -unity-font-style: bold;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    cursor: link;
+    letter-spacing: 1.5px;
+    transition-duration: 0.12s;
+    transition-property: background-color;
+}
+
+.reset-button:hover { background-color: rgba(0, 190, 235, 0.22); }
+
+/* ─── Feedback label ────────────────────────────────────────────────── */
+.feedback-label {
+    font-size: 12px;
+    -unity-font-style: bold;
+    -unity-text-align: upper-center;
+    margin-top: 6px;
+    white-space: normal;
+    opacity: 0;
+    transition-duration: 0.4s;
+    transition-property: opacity;
+    color: rgb(0, 190, 235);
+    letter-spacing: 1px;
+}
+
+.feedback-label.visible { opacity: 1; }
+.feedback-label.correct  { color: rgb(0, 220, 255); }
+.feedback-label.wrong    { color: rgb(255, 70, 100); }
+
+/* ═══ OVERLAYS ═══════════════════════════════════════════════════════ */
+.overlay {
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 8, 20, 0.80);
+}
+
+.overlay.hidden { display: none; }
+
+.overlay-card {
+    background-color: rgb(14, 22, 38);
+    border-left-width: 3px;
+    border-right-width: 3px;
+    border-top-width: 3px;
+    border-bottom-width: 3px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding-top: 36px;
+    padding-bottom: 36px;
+    padding-left: 50px;
+    padding-right: 50px;
+    align-items: center;
+    min-width: 320px;
+}
+
+.win-overlay  .overlay-card { border-color: rgb(0, 220, 255); }
+.lose-overlay .overlay-card { border-color: rgb(255, 70, 100); }
+
+.overlay-title {
+    font-size: 24px;
+    -unity-font-style: bold;
+    margin-bottom: 8px;
+    -unity-text-align: upper-center;
+    letter-spacing: 3px;
+}
+
+.win-title  { color: rgb(0, 220, 255); }
+.lose-title { color: rgb(255, 70, 100); }
+
+.overlay-subtitle {
+    font-size: 14px;
+    color: rgb(185, 215, 235);
+    -unity-text-align: upper-center;
+    margin-bottom: 24px;
+}
+
+.bulb-glow {
+    width: 60px;
+    height: 60px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    background-color: rgb(0, 190, 235);
+    margin-bottom: 22px;
+    border-left-width: 3px;
+    border-right-width: 3px;
+    border-top-width: 3px;
+    border-bottom-width: 3px;
+    border-color: rgba(0, 225, 255, 0.45);
+    transition-duration: 0.4s;
+    transition-property: scale, background-color;
+}
+
+.bulb-glow.pulsing {
+    scale: 1.25 1.25;
+    background-color: rgb(0, 225, 255);
+}
+
+.overlay-btn {
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+    font-size: 14px;
+    -unity-font-style: bold;
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    margin-top: 8px;
+    cursor: link;
+    letter-spacing: 1.5px;
+    transition-duration: 0.12s;
+    transition-property: scale, background-color;
+}
+
+.overlay-btn:hover  { scale: 1.04 1.04; }
+.overlay-btn:active { scale: 0.97 0.97; }
+
+.win-btn {
+    background-color: rgb(0, 190, 235);
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    color: rgb(6, 14, 28);
+}
+.win-btn:hover { background-color: rgb(0, 215, 255); }
+
+.lose-btn {
+    background-color: rgb(255, 70, 100);
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    color: rgb(255, 230, 235);
+    margin-bottom: 6px;
+}
+.lose-btn:hover { background-color: rgb(255, 100, 125); }
+
+.retry-btn {
+    background-color: rgba(0, 190, 235, 0.12);
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-color: rgba(0, 190, 235, 0.50);
+    color: rgb(0, 190, 235);
+}
+.retry-btn:hover { background-color: rgba(0, 190, 235, 0.26); }
+.exit-button {
+    width: 36px;
+    height: 36px;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+    background-color: rgba(255, 70, 100, 0.15);
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-color: rgb(255, 70, 100);
+    color: rgb(255, 70, 100);
+    font-size: 16px;
+    -unity-font-style: bold;
+    cursor: link;
+    margin-left: 12px;
+    transition-duration: 0.12s;
+    transition-property: background-color, scale;
+}
+.exit-button:hover  { background-color: rgba(255, 70, 100, 0.35); scale: 1.08 1.08; }
+.exit-button:active { scale: 0.95 0.95; }
+
+.back-to-map-hint {
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+    align-items: center;
+}
+
+.back-to-map-btn {
+    width: 220px;
+    height: 52px;
+    background-color: rgba(20, 20, 20, 0.85);
+    border-color: rgb(180, 140, 60);
+    border-width: 2px;
+    border-radius: 10px;
+    color: rgb(230, 200, 120);
+    font-size: 18px;
+    -unity-font-style: bold;
+    cursor: hand;
+}
+
+.back-to-map-btn:hover {
+    background-color: rgba(180, 140, 60, 0.25);
+    scale: 1.04;
+}
+
+.hidden {
+    display: none;
+}

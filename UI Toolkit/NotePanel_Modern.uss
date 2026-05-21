@@ -1,0 +1,491 @@
+/*  NotePanel_Modern.uss  —  ModernMuseum  (Sci-Fi HUD)
+    Sprites assigned at runtime via ModernNoteUI Inspector fields.
+    Asset names from the sprite sheet:
+      panelBgSprite        → bg-panel
+      overlayCycuitSprite  → overlay-circuit
+      overlayCornerSprite  → overlay-corner-tl / tr
+      topDecorSprite       → top-decor
+      accentBarSprite      → accent-bar
+      imgFrameSprite       → img-frame
+      sideDecorSprite      → side-decor
+      barcodeSprite        → barcode
+      bottomDecorSprite    → bottom-decor             */
+
+/* ══════════════════════════════════════════════════
+   OVERLAY
+══════════════════════════════════════════════════ */
+.overlay {
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 5, 15, 0.82);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* ══════════════════════════════════════════════════
+   NOTE CARD  — wide landscape HUD panel
+══════════════════════════════════════════════════ */
+.note-card {
+    width: 940px;
+    min-height: 520px;
+    max-height: 680px;
+
+    /* Deep dark glass — fallback if bg-panel sprite not set */
+    background-color: rgb(8, 16, 30);
+
+    border-radius: 8px;
+    border-width: 2px;
+    border-color: rgb(0, 185, 235);
+
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 18px;
+    padding-bottom: 16px;
+
+    flex-direction: column;
+    align-items: stretch;
+    overflow: hidden;
+}
+
+/* ══════════════════════════════════════════════════
+   BACKGROUND PANEL SPRITE  (panel_bg_01)
+   Fills entire card — set via code
+══════════════════════════════════════════════════ */
+.bg-panel {
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    -unity-background-scale-mode: stretch-to-fill;
+    background-color: rgba(0,0,0,0);
+}
+
+/* ══════════════════════════════════════════════════
+   OVERLAY CIRCUIT / DOTS  (overlay_circuit_01)
+   Semi-transparent decoration layer over bg
+══════════════════════════════════════════════════ */
+.overlay-circuit {
+    position: absolute;
+    right: 0; top: 0;
+    width: 900px;
+    height: 500px;
+    -unity-background-scale-mode: scale-to-fit;
+    background-color: rgba(0,0,0,0);
+    opacity: 0.35;
+}
+
+/* ══════════════════════════════════════════════════
+   OVERLAY CORNERS  (overlay_corner_01)
+══════════════════════════════════════════════════ */
+.overlay-corner {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    -unity-background-scale-mode: scale-to-fit;
+    background-color: rgba(0,0,0,0);
+    opacity: 0.7;
+}
+.overlay-corner--tl { top: 0; left: 0; }
+.overlay-corner--tr { top: 0; right: 0; rotate: 90deg; }
+
+/* ══════════════════════════════════════════════════
+   TOP DECORATION BAR  (top_decor_01)
+══════════════════════════════════════════════════ */
+.top-decor {
+    width: 100%;
+    height: 18px;
+    -unity-background-scale-mode: stretch-to-fill;
+    background-color: rgba(0,0,0,0);
+    margin-bottom: 4px;
+    flex-shrink: 0;
+    /* Fallback thin cyan line */
+    border-bottom-width: 1px;
+    border-bottom-color: rgba(0, 185, 235, 0.35);
+    border-top-width: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+}
+
+/* ══════════════════════════════════════════════════
+   CLOSE BUTTON  (icon_close sprite bg)
+══════════════════════════════════════════════════ */
+.close-btn {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    width: 44px;
+    height: 44px;
+    background-color: rgba(0, 185, 235, 0.30);
+    border-radius: 22px;
+    border-width: 2px;
+    border-color: rgb(0, 185, 235);
+    color: rgb(0, 220, 255);
+    font-size: 18px;
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    padding: 0;
+    transition-property: background-color;
+    transition-duration: 0.2s;
+}
+.close-btn:hover { background-color: rgba(0, 185, 235, 0.55); }
+
+/* ══════════════════════════════════════════════════
+   NARRATOR / AUDIO BUTTON  (icon_audio sprite)
+══════════════════════════════════════════════════ */
+.narrator-wrap {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    flex-direction: column;
+    align-items: center;
+}
+.narrator-btn {
+    width: 64px;
+    height: 64px;
+    background-color: rgba(0, 185, 235, 0.10);
+    border-radius: 32px;
+    border-width: 2px;
+    border-color: rgb(0, 185, 235);
+    color: rgb(0, 220, 255);
+    font-size: 26px;
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    padding: 0;
+    transition-property: background-color, border-color;
+    transition-duration: 0.25s;
+}
+.narrator-btn:hover { background-color: rgba(0, 185, 235, 0.30); }
+.narrator-btn--playing {
+    background-color: rgba(0, 220, 255, 0.28);
+    border-color: rgb(0, 255, 255);
+    border-width: 3px;
+    color: rgb(255, 255, 255);
+}
+.narrator-label {
+    font-size: 10px;
+    color: rgb(0, 185, 235);
+    -unity-text-align: middle-center;
+    letter-spacing: 2px;
+    margin-top: 3px;
+    -unity-font-style: bold;
+}
+
+/* ══════════════════════════════════════════════════
+   TITLE  — "THE <CYAN WORD>"
+   The cyan highlight on one word is faked at runtime
+   by setting richText on the label and wrapping one
+   word in <color=#00D4FF>…</color>
+══════════════════════════════════════════════════ */
+.statue-name {
+    font-size: 34px;
+    -unity-font-style: bold;
+    color: rgb(220, 235, 245);
+    -unity-text-align: middle-center;
+    margin-top: 8px;
+    margin-bottom: 6px;
+    letter-spacing: 5px;
+}
+
+/* ══════════════════════════════════════════════════
+   ACCENT BAR  (accent_bar_01 sprite)
+   Cyan striped bar under the title
+══════════════════════════════════════════════════ */
+.accent-bar {
+    width: 260px;
+    height: 14px;
+    align-self: flex-start;
+    margin-left: 360px;      /* pushed to right of centre, under title */
+    -unity-background-scale-mode: stretch-to-fill;
+    background-color: rgba(0,0,0,0);
+    margin-bottom: 12px;
+    flex-shrink: 0;
+    /* Fallback simple cyan line */
+    border-bottom-width: 3px;
+    border-bottom-color: rgb(0, 185, 235);
+    border-top-width: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+}
+
+/* ══════════════════════════════════════════════════
+   BODY ROW
+══════════════════════════════════════════════════ */
+.body-row {
+    flex-direction: row;
+    align-items: flex-start;
+    flex-grow: 1;
+    margin-bottom: 4px;
+}
+
+/* ── LEFT COLUMN ── */
+.left-col {
+    width: 310px;
+    flex-shrink: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 28px;
+    position: relative;
+}
+
+/* ── RIGHT COLUMN ── */
+.right-col {
+    flex-grow: 1;
+    flex-direction: column;
+    align-items: stretch;
+    padding-top: 8px;
+}
+
+/* ══════════════════════════════════════════════════
+   IMAGE FRAME  (frame_03 or frame_04 sprite)
+   Wraps the illustration with a HUD cut-corner frame
+══════════════════════════════════════════════════ */
+.img-frame {
+    width: 290px;
+    height: 280px;
+    border-radius: 6px;
+    border-width: 2px;
+    border-color: rgb(0, 185, 235);
+    background-color: rgba(0, 185, 235, 0.06);
+    -unity-background-scale-mode: stretch-to-fill;
+    overflow: hidden;
+    margin-bottom: 6px;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-end;
+}
+
+.illustration {
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    -unity-background-scale-mode: scale-to-fit;
+    background-color: rgba(0,0,0,0);
+}
+
+.img-archive-label {
+    font-size: 10px;
+    color: rgb(0, 185, 235);
+    -unity-font-style: bold;
+    letter-spacing: 2px;
+    margin-left: 8px;
+    margin-bottom: 8px;
+}
+
+/* ══════════════════════════════════════════════════
+   SIDE DECORATION  (side_decor_01 sprite)
+   Thin vertical accent bar beside the image
+══════════════════════════════════════════════════ */
+.side-decor {
+    position: absolute;
+    left: -14px;
+    top: 20px;
+    width: 10px;
+    height: 200px;
+    -unity-background-scale-mode: stretch-to-fill;
+    background-color: rgba(0,0,0,0);
+    /* Fallback: thin cyan bar */
+    border-right-width: 2px;
+    border-right-color: rgba(0, 185, 235, 0.6);
+    border-top-width: 0;
+    border-left-width: 0;
+    border-bottom-width: 0;
+}
+
+/* ══════════════════════════════════════════════════
+   ARTIFACT ID BLOCK  (bottom-left of left column)
+══════════════════════════════════════════════════ */
+.artifact-id-block {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 4px;
+}
+.artifact-id-title {
+    font-size: 10px;
+    color: rgb(0, 185, 235);
+    letter-spacing: 2px;
+    -unity-font-style: bold;
+    margin-bottom: 2px;
+}
+.artifact-id-value {
+    font-size: 13px;
+    color: rgb(0, 220, 255);
+    letter-spacing: 3px;
+    -unity-font-style: bold;
+    margin-bottom: 4px;
+}
+/* Barcode sprite slot */
+.barcode {
+    width: 120px;
+    height: 22px;
+    -unity-background-scale-mode: stretch-to-fill;
+    background-color: rgba(0,0,0,0);
+    /* Fallback: dashed cyan line */
+    border-bottom-width: 2px;
+    border-bottom-color: rgba(0, 185, 235, 0.5);
+    border-top-width: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+}
+
+/* ══════════════════════════════════════════════════
+   TEXT TIMELINE  — info dot + vertical line + text
+══════════════════════════════════════════════════ */
+.text-row {
+    flex-direction: row;
+    align-items: flex-start;
+    margin-bottom: 18px;
+}
+.text-row--first {
+    /* nothing special needed; first row has info dot */
+}
+
+/* The circular dot / info icon */
+.timeline-dot {
+    width: 34px;
+    height: 34px;
+    border-radius: 17px;
+    border-width: 2px;
+    border-color: rgb(0, 185, 235);
+    background-color: rgba(0, 185, 235, 0.15);
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-right: 14px;
+    margin-top: 2px;
+}
+.timeline-dot--info {
+    /* Matches the (i) circle in the mockup */
+    border-color: rgb(0, 185, 235);
+    background-color: rgba(0, 185, 235, 0.18);
+}
+.dot-icon {
+    font-size: 16px;
+    -unity-font-style: bold;
+    color: rgb(0, 220, 255);
+    -unity-text-align: middle-center;
+}
+
+/* Thin vertical cyan line connecting dots (shown when multiple rows) */
+.timeline-line {
+    display: none;   /* enable when you have multiple text-rows */
+    position: absolute;
+    left: 16px;
+    top: 36px;
+    width: 2px;
+    background-color: rgba(0, 185, 235, 0.40);
+    flex-shrink: 0;
+}
+
+/* ══════════════════════════════════════════════════
+   NOTE TEXT
+══════════════════════════════════════════════════ */
+.note-text {
+    flex-grow: 1;
+    font-size: 19px;
+    color: rgb(190, 220, 238);
+    white-space: normal;
+    -unity-text-align: upper-left;
+    line-height: 1.55;
+}
+
+/* ══════════════════════════════════════════════════
+   SPACER
+══════════════════════════════════════════════════ */
+.spacer { flex-grow: 1; min-height: 4px; }
+
+/* ══════════════════════════════════════════════════
+   BOTTOM DECORATION  (bottom_decor_01 sprite)
+══════════════════════════════════════════════════ */
+.bottom-decor {
+    width: 100%;
+    height: 22px;
+    -unity-background-scale-mode: stretch-to-fill;
+    background-color: rgba(0,0,0,0);
+    margin-bottom: 6px;
+    flex-shrink: 0;
+    /* Fallback */
+    border-top-width: 1px;
+    border-top-color: rgba(0, 185, 235, 0.35);
+    border-bottom-width: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+}
+
+/* ══════════════════════════════════════════════════
+   NAV ROW
+══════════════════════════════════════════════════ */
+.nav-row {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 2px;
+}
+
+/* Arrow-only prev / next buttons */
+.nav-arrow-btn {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 185, 235, 0.10);
+    border-radius: 4px;
+    border-width: 1px;
+    border-color: rgba(0, 185, 235, 0.55);
+    color: rgb(0, 220, 255);
+    font-size: 18px;
+    -unity-text-align: middle-center;
+    padding: 0;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+.nav-arrow-btn:hover { background-color: rgba(0, 185, 235, 0.28); }
+
+/* Page indicator centred between arrows */
+.page-indicator-wrap {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    min-width: 80px;
+}
+.page-indicator {
+    font-size: 15px;
+    color: rgb(0, 185, 235);
+    -unity-text-align: middle-center;
+    letter-spacing: 3px;
+    -unity-font-style: bold;
+}
+
+/* Solid cyan NEXT button — right-most */
+.nav-btn-next {
+    background-color: rgb(0, 185, 235);
+    border-radius: 6px;
+    border-width: 0;
+    color: rgb(5, 10, 20);
+    font-size: 15px;
+    -unity-font-style: bold;
+    padding-left: 28px;
+    padding-right: 28px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    letter-spacing: 3px;
+    margin-left: 12px;
+    transition-property: background-color;
+    transition-duration: 0.2s;
+}
+.nav-btn-next:hover { background-color: rgb(0, 215, 255); }
+
+/* ══════════════════════════════════════════════════
+   START REPAIR BUTTON
+══════════════════════════════════════════════════ */
+.start-repair-btn {
+    display: none;
+    margin-top: 10px;
+    background-color: rgba(255, 160, 0, 0.16);
+    border-radius: 5px;
+    border-width: 1px;
+    border-color: rgb(255, 160, 0);
+    color: rgb(255, 200, 80);
+    font-size: 15px;
+    -unity-font-style: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    letter-spacing: 2px;
+    -unity-text-align: middle-center;
+}
+.start-repair-btn:hover { background-color: rgba(255, 160, 0, 0.35); }

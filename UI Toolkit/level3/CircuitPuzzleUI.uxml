@@ -1,0 +1,119 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+  <Style src="CircuitPuzzleUI.uss" />
+
+  <!-- Full-screen transparent root — museum camera shows through -->
+  <ui:VisualElement name="root" class="root-container">
+
+    <!-- Dark scrim behind the note panel -->
+    <ui:VisualElement class="scrim" picking-mode="Ignore" />
+
+    <!-- ══ THE NOTE PANEL ══════════════════════════════════════════ -->
+    <ui:VisualElement name="note-panel" class="note-panel">
+
+      <!-- ── Note Header ── -->
+<ui:VisualElement class="note-header">
+    <ui:VisualElement class="note-header-left">
+        <ui:Label text="⚡" class="note-icon" />
+        <ui:Label text="Build the Circuit" class="note-title" />
+    </ui:VisualElement>
+    <ui:VisualElement class="hearts-container">
+        <ui:Label name="heart-1" text="❤" class="heart heart-active" />
+        <ui:Label name="heart-2" text="❤" class="heart heart-active" />
+        <ui:Label name="heart-3" text="❤" class="heart heart-active" />
+    </ui:VisualElement>
+    <!-- EXIT BUTTON -->
+    <ui:Button name="exit-btn" text="✕" class="exit-button" />
+</ui:VisualElement>
+
+      <!-- ── Note Body: canvas + sidebar ── -->
+      <ui:VisualElement class="note-body">
+
+        <!-- Puzzle canvas -->
+        <ui:VisualElement name="puzzle-canvas" class="puzzle-canvas">
+          <ui:VisualElement name="tray-divider" class="tray-divider" picking-mode="Ignore" />
+          <ui:VisualElement name="wire-canvas"  class="wire-canvas"  picking-mode="Ignore" />
+
+          <ui:VisualElement name="battery-component"      class="component battery-comp" />
+          <ui:VisualElement name="bulb-component"         class="component bulb-comp" />
+          <ui:VisualElement name="switch-component"       class="component switch-comp" />
+          <ui:VisualElement name="wire-green-component"   class="component wire-comp wire-green-comp" />
+          <ui:VisualElement name="wire-yellow-component"  class="component wire-comp wire-yellow-comp" />
+          <ui:VisualElement name="wire-orange-component"  class="component wire-comp wire-orange-comp" />
+        </ui:VisualElement>
+
+        <!-- Sidebar -->
+        <ui:VisualElement class="note-sidebar">
+
+          <!-- Hint image -->
+          <ui:VisualElement class="hint-box">
+            <ui:Label text="Hint" class="hint-label" />
+            <ui:VisualElement name="hint-image" class="hint-image" />
+          </ui:VisualElement>
+
+          <ui:VisualElement class="divider" />
+
+          <!-- Checklist -->
+          <ui:Label text="Checklist" class="side-heading" />
+          <ui:VisualElement class="checklist">
+            <ui:VisualElement class="check-row">
+              <ui:Label name="check-battery"    text="○" class="check-icon" />
+              <ui:Label text="Battery"  class="check-text" />
+            </ui:VisualElement>
+            <ui:VisualElement class="check-row">
+              <ui:Label name="check-bulb"       text="○" class="check-icon" />
+              <ui:Label text="Bulb"     class="check-text" />
+            </ui:VisualElement>
+            <ui:VisualElement class="check-row">
+              <ui:Label name="check-switch"     text="○" class="check-icon" />
+              <ui:Label text="Switch"   class="check-text" />
+            </ui:VisualElement>
+            <ui:VisualElement class="check-row">
+              <ui:Label name="check-wire-green"  text="○" class="check-icon" />
+              <ui:Label text="Green wire"  class="check-text" />
+            </ui:VisualElement>
+            <ui:VisualElement class="check-row">
+              <ui:Label name="check-wire-yellow" text="○" class="check-icon" />
+              <ui:Label text="Yellow wire" class="check-text" />
+            </ui:VisualElement>
+            <ui:VisualElement class="check-row">
+              <ui:Label name="check-wire-orange" text="○" class="check-icon" />
+              <ui:Label text="Orange wire" class="check-text" />
+            </ui:VisualElement>
+          </ui:VisualElement>
+
+          <ui:VisualElement class="spacer" />
+
+          <ui:Button name="check-btn" text="✔ Check" class="check-button" />
+          <ui:Button name="reset-btn" text="↺ Reset"  class="reset-button" />
+          <ui:Label  name="feedback-label" text=""    class="feedback-label" />
+
+        </ui:VisualElement>
+      </ui:VisualElement>
+
+    </ui:VisualElement>
+    <!-- ══ END NOTE PANEL ══════════════════════════════════════════ -->
+
+<!-- Win Overlay -->
+<ui:VisualElement name="win-overlay" class="overlay win-overlay hidden">
+  <ui:VisualElement class="overlay-card">
+    <ui:Label text="⚡ Circuit Complete!" class="overlay-title win-title" />
+    <ui:Label text="The bulb lights up in the museum!" class="overlay-subtitle" />
+    <ui:VisualElement name="bulb-glow" class="bulb-glow" />
+  </ui:VisualElement>
+</ui:VisualElement>
+
+<!-- Lose Overlay -->
+<ui:VisualElement name="lose-overlay" class="overlay lose-overlay hidden">
+  <ui:VisualElement class="overlay-card">
+    <ui:Label text="💔 No More Tries!" class="overlay-title lose-title" />
+    <ui:Label text="The circuit didn't work." class="overlay-subtitle" />
+    <ui:Button name="go-back-btn" text="← Back to Level 2" class="overlay-btn lose-btn" />
+  </ui:VisualElement>
+</ui:VisualElement>
+
+<!-- Back to Map hint — shown in scene after winning, hidden by default -->
+<ui:VisualElement name="back-to-map-hint" class="back-to-map-hint hidden">
+  <ui:Button name="back-to-map-btn" text="🗺 Back to Map" class="back-to-map-btn" />
+</ui:VisualElement>
+  </ui:VisualElement>
+</ui:UXML>

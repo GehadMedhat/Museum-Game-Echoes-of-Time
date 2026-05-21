@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e96bbecf9dea9b158a6ed9553c52f9f, type: 3}
+  m_Name: CircuitPuzzleData
+  m_EditorClassIdentifier: Assembly-CSharp::CircuitPuzzleData
+  batterySprite: {fileID: 5856981904466133357, guid: 2689488216f8df498a7488824d2a29a1, type: 3}
+  bulbUnlitSprite: {fileID: -8981655084669332478, guid: f61e4865b034c9300882731c9dca670d, type: 3}
+  bulbLitSprite: {fileID: -7077177934755563471, guid: c6e69d6115d672e6ab2d8f4037453fb8, type: 3}
+  switchSprite: {fileID: -5791533861771406970, guid: 85bf5bfd87040e299aeae256cd9e5812, type: 3}
+  wireGreenSprite: {fileID: -809586791098573241, guid: fe728f9bbfea46094997c4ba44a324e5, type: 3}
+  wireYellowSprite: {fileID: -2520929636467479797, guid: f89ba915440d9e1c6b374a1d71ba16fd, type: 3}
+  wireOrangeSprite: {fileID: -8493373156827294713, guid: c39adf62e68cb539885851b54b40ac41, type: 3}
+  wireColorGreen: {r: 0.18, g: 0.72, b: 0.25, a: 1}
+  wireColorYellow: {r: 0.95, g: 0.82, b: 0.1, a: 1}
+  wireColorOrange: {r: 0.95, g: 0.5, b: 0.1, a: 1}
+  hintCircuitSprite: {fileID: -4483910542341525416, guid: 120a881a00b2de045be70e834dd059d5, type: 3}

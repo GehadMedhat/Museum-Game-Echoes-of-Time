@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3d2b5e5b8bd75781820de5be38f0970, type: 3}
+  m_Name: ExhibitData_telephone
+  m_EditorClassIdentifier: Assembly-CSharp::ExhibitData
+  exhibitName: THE TELEPHONE
+  pages:
+  - "Imagine living in a time when the only way to talk\nto someone far away was
+    to write a letter\nand wait WEEKS for a reply!\n \nThat all changed in 1876 when
+    Alexander Graham Bell\nsent the very first voice message through a wire.\nHis
+    exact words were: \"Mr. Watson, come here.\nI want to see you!\" His assistant
+    heard it\nfrom the next room and was completely stunned."
+  - "Early telephones had no buttons or screens.\nYou had to crank a handle to reach
+    an operator\nwho would manually connect you to the other person!\n \nBell once
+    offered to sell his invention for $100,000\nand the buyer said NO. The biggest
+    business mistake ever!\nToday over 8 billion phones are used around the world,\nand
+    it all started with one wire and one voice. \U0001F4DE"
+  exhibitIllustration: {fileID: 4948933554451466441, guid: f28bdf402da447386bab2a3d31c2c811, type: 3}
+  narratorClip: {fileID: 8300000, guid: 94f73b60df764a3ed885ebee6346204b, type: 3}

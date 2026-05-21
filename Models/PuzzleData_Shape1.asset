@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb3f43343ddb8f5c2914aa80d83bc0a6, type: 3}
+  m_Name: PuzzleData_Shape1
+  m_EditorClassIdentifier: Assembly-CSharp::PuzzleData
+  shapeName: Ankh
+  ghostOutline: {fileID: -4884380060265710468, guid: 1e9e58679e9a2fae2b316ffdc52d0a03, type: 3}
+  assembledImage: {fileID: 1095141833252711340, guid: d97183d2575d2ccf48fbbe177a2cde86, type: 3}
+  pieces:
+  - pieceName: Bottom
+    pieceSprite: {fileID: -3742592120836699101, guid: 398679f57007cd7fba8d54dcf6806174, type: 3}
+    left: 220
+    top: 320
+    width: 100
+    height: 230
+  - pieceName: Top Left
+    pieceSprite: {fileID: -1732828848487552111, guid: 4e2e34bec835c54ae8301d2cacb3fcba, type: 3}
+    left: 175
+    top: -5
+    width: 148
+    height: 290
+  - pieceName: Left
+    pieceSprite: {fileID: -2208510542369132325, guid: ee32123a5c32967b38738045dd81aa3a, type: 3}
+    left: 130
+    top: 100
+    width: 163
+    height: 238
+  - pieceName: Top Right
+    pieceSprite: {fileID: 4142683866307738266, guid: 598bf6f57c049e9178ffc635b8f8fa18, type: 3}
+    left: 280
+    top: 6
+    width: 101
+    height: 227
+  - pieceName: Right
+    pieceSprite: {fileID: -4345969612696422427, guid: 5116e390cfc17b7f6af9012e90f1f811, type: 3}
+    left: 300
+    top: 202
+    width: 140
+    height: 127
